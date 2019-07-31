@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	change_bg_vid_img('img/startpage/bg_video_loop.mp4', 'img/startpage/bg.jpg');
 	get_events();
+	change_bg_vid_img('img/startpage/bg_video_loop.mp4', 'img/startpage/bg.jpg');
 });
 
 // Event Listeners //
@@ -18,8 +18,11 @@ $('#header-events-btn').click(function(){show_home_page('events-section');});
 
 $('.sponsorship-btn').click(function(){show_section("contact-section");});
 $('.brochure-btn').click(function(){show_section("contact-section");});
+$('.register-now-btn').click(function(){show_section("contact-section");});
 
 $('#get-in-touch-btn').click(function(){show_section("contact-section");});
+
+
 
 // Functions //
 function change_bg_vid_img(video, img) {
@@ -53,7 +56,7 @@ function get_events() {
 
 	for (i=1;i<=more_events;i++) {
 		$('#more-events').append('<div id="event'+i+'" class="w3-container w3-third w3-mobile w3-round-xxlarge w3-hover-grayscale"></div>');
-		$('#event'+i).html('<img class="event-img" src="'+event[i-1][0]+'"><div class="event-text"><h5>'+event[i-1][1]+'</h5><p>'+event[i-1][2]+'<br>'+event[i-1][3]+'<br>'+event[i-1][4]+'</p></div>');
+		$('#event'+i).html('<img class="event-img" src="img/events/event'+i+'/event'+i+'.jpg"><div class="event-text"><h5>'+event[i-1][1]+'</h5><p>'+event[i-1][2]+'<br>'+event[i-1][3]+'<br>'+event[i-1][4]+'</p></div>');
 	}
 }
 
