@@ -1,0 +1,342 @@
+/* Sitewide */
+body {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+p, h1, h2, h3, h4, h5, h6, a, button, label {
+  font-family: Avenir Next, 'Lato', sans-serif;
+}
+
+.text-color {color: #231651;}
+
+@media only screen and (max-width: 600px) {
+  .w3-third, .w3-half, #event0 {
+    width:100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+} 
+
+h3 {
+  font-size: 2.5em;
+}
+
+/* Bg */
+
+#bg {
+  background-color: rgb(15,77,146);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  min-height: 100vh;
+  min-width: 100vw;
+  opacity: 1; 
+  -webkit-filter: brightness(56%);
+  filter: brightness(56%);
+}
+
+#bg-video {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+/* Sidebar */
+/********************/
+/* Sidebar-left Styling */
+/******************/
+#sidebar-left {
+  display: none;
+  z-index:5; 
+  width: 200px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+/* Bar Items */
+#account-btn {margin-top:64px;}
+#policies-btn {margin-bottom: 64px;}
+
+/* Overlay Styling */
+#overlay {
+  cursor: pointer;
+  padding-top: env(safe-area-inset-top); 
+  padding-right: env(safe-area-inset-right); 
+  padding-left: env(safe-area-inset-left);
+}
+
+#open-bar-btn, #join-us-btn {
+  z-index: 2;
+}
+
+/* Cross Button Placement */
+#close-bar {
+  font-size: 20vw; 
+  line-height: 50%; 
+  padding-left: 200px;
+}
+
+/* Cross Button Animation */
+.w3-animation-pulse {
+  -webkit-animation-name: fading-out;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  
+  animation-name: fading-out;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes fading-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+@keyframes fading-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+
+/*Event */
+#event0 {
+  max-width: 600px; 
+  margin-right: auto; 
+  margin-left: auto;
+}
+
+
+
+
+.w3-xxlarge{
+  font-size: 2.5em;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 400;
+  padding-top:64px;
+  padding-bottom:32px;
+}
+
+.full-viewport {
+  display: inline-block;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.content-padding {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.btn-size {
+  min-width: 150px;
+}
+
+.text-dark-1 {color: #0f4d92;}
+.text-dark-2 {color: #231651;}
+.text-light-1 {color: #d6fff6;}
+.text-light-2 {color: #4dccbd;}
+.text-light-3 {color: #97ead2;}
+
+/* BG Colors Transparent */
+.bg-dark-1 {background-color: rgba(15, 77, 146, 0.9);}
+.bg-dark-2 {background-color: rgba(35,22,81,0.9);}
+.bg-light-1 {background-color: rgba(214,255,246,0.9);}
+.bg-light-2 {background-color: rgba(77,204,89,0.9);}
+.bg-light-3 {background-color: rgba(151,234,210,0.9);}
+
+/* BG Colors Solid*/
+.bg-dark-solid-1 {background-color: #0f4d92;}
+.bg-dark-solid-2 {background-color: #231651;}
+.bg-light-solid-1 {background-color: #d6fff6;}
+.bg-light-solid-2 {background-color: #4dccbd;}
+.bg-light-solid-3 {background-color: #97ead2;}
+
+/**************/
+/* Main Page */
+/************/
+
+/*#navbar-top {mix-blend-mode: difference;}*/
+
+/* Events Section */
+.event-img {
+  cursor: pointer;
+  max-width: 100%;
+  border-radius: 16px 16px 0px 0px;
+}
+
+.event-text {
+  padding: 16px;
+  min-height: 30vh;
+  cursor: pointer;
+  color: #0f4d92;
+  background-color: rgba(214,255,246,0.9);
+  border-radius: 0px 0px 16px 16px;
+  margin-bottom: 32px;
+}
+
+/* About Section */
+.about-cards {
+  margin-bottom: 32px;
+}
+
+
+
+
+
+
+
+
+
+/* Colors */
+.dark-color-1 {color: #0f4d92;}
+.dark-color-2 {color: #231651;}
+.light-color-1 {color: #d6fff6;}
+.light-color-2 {color: #4dccbd;}
+.light-color-3 {color: #97ead2;}
+
+/* BG Colors */
+.bg-dark-color-1 {background-color: #0f4d92; color: #d6fff6;}
+.bg-dark-color-2 {background-color: #231651;}
+.bg-light-color-1 {background-color: #d6fff6; color: #0f4d92;}
+.bg-light-color-2 {background-color: #4dccbd;}
+.bg-light-color-3 {background-color: #97ead2;}
+
+h2 {
+  font-weight: 400;
+}
+
+h5 {
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.w3-button {
+  cursor:pointer
+}
+
+.center-margin {
+  margin: auto;
+}
+
+/**************************/
+/* Banner/Header Styling */
+/************************/
+
+header {
+  padding-top: env(safe-area-inset-top); 
+  padding-right: env(safe-area-inset-right); 
+  padding-left: env(safe-area-inset-left);  
+  max-width: 90vw;
+}
+
+
+/**************************/
+/* About Page*/
+/************************/
+#about-page {
+  margin-top: 64px;
+}
+
+#know-more-about {
+  padding-left: 24px;
+  padding-right: 24px;  
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .about-img {
+    border-radius: 16px 16px 0px 0px;
+  }
+  .about-text {
+    border-radius: 0px 0px 16px 16px;
+  }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .about-img {
+    border-radius: 16px 16px 0px 0px;
+  }
+  .about-text {
+    border-radius: 0px 0px 16px 16px;
+  }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 991px) {
+  .about-img {
+    border-radius: 16px 16px 0px 0px;
+    display: block;
+  }
+  .about-text {
+    border-radius: 0px 0px 16px 16px;
+    display: block;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .about-img {
+    border-radius: 16px 0px 0px 16px;
+  }
+  .about-text {
+    border-radius: 0px 16px 16px 0px;
+  }
+} 
+
+
+/*****************/
+/* Contact Page */
+/***************/
+#contact-form {
+  margin: auto;
+  max-width: 640px;
+}
+form {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+/**********************/
+/* Single Event Page */
+/********************/
+#event-header {
+  background-color: rgba(214,255,246,0.1);
+}
+
+#event-dat, #event-city {
+  width: 50%;
+}
+
+#event-about {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#event-about-para {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.event-about-para-element {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+#topics-covered {
+  padding-top: 64px;
+}
+.vectors-img {}
+

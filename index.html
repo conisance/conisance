@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        <meta http-equiv="Content-Security-Policy" content="
+                            default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+                            style-src 'self' 'unsafe-inline'; 
+                            media-src *; 
+                            img-src 'self' data: content:;">
+                        -->
+        <meta http-equiv="Content-Security-Policy" content="
+                            default-src * data: blob: ws: wss: gap://ready file://*;
+                            style-src * 'unsafe-inline'; 
+                            script-src * 'unsafe-inline' 'unsafe-eval';
+                            connect-src * ws: wss:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+
+        <title>Conisance</title>
+        <link rel="stylesheet" type="text/css" href="css/w3.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="bg" class="w3-top">
+            <video id="bg-video" webkit-playsinline playsinline loop muted autoplay></video>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="nav-sidebar">
+            <div id="sidebar-left" class="w3-sidebar w3-bar-block w3-top w3-animate-left bg-light-solid-1 text-dark-1">
+                <a id="account-btn" onclick="sidebar_action();document.getElementById('login').style.display='block';" class="w3-button w3-bar-item w3-center w3-display-topmiddle">ACCOUNT</a>
+                <div class="w3-bar-item w3-display-middle w3-large ">
+                    <a id="events-btn" class="w3-bar-item w3-button w3-round-xxlarge w3-center w3-hide w3-animate-left">EVENTS</a>
+                    <a id="about-btn" class="w3-bar-item w3-button w3-round-xxlarge w3-center w3-hide w3-animate-left">ABOUT</a>
+                    <a id="contact-btn" class="w3-bar-item w3-button w3-round-xxlarge w3-center w3-hide w3-animate-left">CONTACT</a>
+                </div>
+                <a id="policies-btn" onclick="sidebar_action();document.getElementById('policies').style.display='block';" class="w3-button w3-bar-item w3-center w3-display-bottommiddle">POLICIES</a>
+            </div>
+
+            <!-- Top Bar for Humburger and Join Now Button -->
+            <div id="navbar-top" class="w3-top w3-animate-opacity w3-black" style="height: 60px;">
+                <button id="open-bar-btn" class="w3-button text-light-1 w3-xlarge w3-left" style="height: 60px; width: 60px;">&#9776;</button>
+                <img src="img/icon.png" alt="" class="w3-image w3-left" style="max-height: 60px; padding: 16px;">
+                <button id="join-us-btn" onclick="document.getElementById('login').style.display='block'" class="w3-button btn-size text-light-1 w3-large w3-right w3-padding w3-border w3-round-xxlarge" style="margin: 8px">Join Us</button>
+            </div>
+
+            <!-- Sidebars Overlay -->
+            <div id="overlay" class="w3-overlay w3-animate-opacity">
+                <div id="close-bar" class="text-light-1 w3-animate-opacity w3-center w3-display-middle">
+                    <div id="close-sign" class="w3-animation-pulse">&times;</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="home-page">
+        <!-- Start - Static Content -->
+            <div id="header-section" class="full-viewport w3-display-container">
+                <div id="header-conent" class="w3-threequarter w3-display-middle text-light-1 w3-center">
+                    <img class="w3-image" width="80%" src="img/logo.png" alt="Conisance">
+                    <p class="w3-center">
+                        We are a Global Events Company nurturing best collaboration practices across industries, </br>for a sustainable future of our planet.
+                    </p>
+                    <div class="w3-cell-row w3-center">
+                        <div class="w3-cell w3-mobile w3-half">
+                            <button id="header-events-btn" class="w3-button btn-size w3-large w3-margin w3-border w3-round-xxlarge text-light-1">Events</button>
+                        </div>
+                        <div class="w3-cell w3-mobile w3-half">
+                            <button id="blog-btn" class="w3-button btn-size w3-large w3-margin w3-border w3-round-xxlarge text-light-1">Blogs</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End - Static Content -->
+
+        <!-- Start - Dynamic Content -->
+            <!-- All Events Page -->
+            <div id="events-section" class="full-viewport content-padding">
+                <div id="events-content" class="w3-center text-light-1">
+                    <h1>Events</h1>
+                    <!-- Append Events Here -->
+                    <div id="event0" class="w3-row w3-container w3-mobile w3-round-xxlarge w3-hover-grayscale"></div>
+                    <div id="more-events" class="w3-hide w3-animate-opacity"></div>
+                    <div class="w3-cell-row w3-center w3-padding-32">
+                        <button id="more-events-btn" class="w3-button w3-large w3-padding w3-border text-light-1 w3-round-xxlarge">More Events</button>
+                    </div>
+                </div>
+            </div>
+            <!-- End - Dynamic Content -->
+
+
+            <!-- Start - Static Content -->
+            <div id="about-section" class="full-viewport content-padding">
+                <div id="events-content" class="w3-center text-light-1">
+                    <h1>About</h1>
+
+                    <div class="w3-container w3-third about-cards">
+                        <div class="bg-light-1 text-dark-1 w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                            <div class="w3-cell w3-cell-middle">
+                                <h3>Who We Are</h3>
+                                <p>We are Conisance, a global events company connecting innovation and reality. For a sustainable future of our planet, with trust, we catalyse collaborations amongst public, private and international organizations on our networking platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-container w3-third about-cards">
+                        <div class="bg-light-1 text-dark-1 w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                            <div class="w3-cell w3-cell-middle">
+                                <h3>What We Do</h3>
+                                <p>We strategically connect Corporates, Government Representatives, Startups, Investors and Academics with our comprehensive event agendas, focused on the critical challenges of the 21st century faced by various industries, inducing subject matter expertise and thriving business & economic goals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-container w3-third about-cards">
+                        <div class="bg-light-1 text-dark-1 w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                            <div class="w3-cell w3-cell-middle">
+                                <h3>Our Mission</h3>
+                                <p>We are aligned with the United Nations Sustainable Development Goals and thus our events are structured with the most elite line-up of Speakers, Sponsors and Delegates, to leverage emerging technologies in defining inclusive and equitable solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-cell-row w3-center w3-padding-64">
+                        <button id="know-more-btn" class="w3-button btn-size w3-large w3-padding w3-border text-light-1 w3-round-xxlarge">Know More</button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End - Static Content -->
+        </div>
+
+        <!-- Start - Static Content -->
+        <div id="about-page" class="full-viewport content-padding w3-hide w3-animate-opacity">
+            <div id="about-page-content" class="w3-center text-light-1" style="padding-top: 2vh;">
+                <h1 class="w3-xxlarge">About</h1>
+
+                <div class="w3-container about-cards">
+                    <div class="w3-cell-row bg-light-1 text-dark-1 w3-round-xxlarge w3-padding">
+                        <p>In a world of million possibilities we live in today the challenge we confront is not about finding the right path of human evolution. The paths are already being discovered as everyday technology is bringing in promises of a tomorrow with greater possibilities. In the wake of Industrial Revolution 4.O, rather than discovering, it is more about choosing the right path.</p>
+                        <p>With the Rise of technologies like Machine Learning, Artificial Intelligence, Genetic Engineering, Big Data, Blockchain, etc. We have a great opportunity to manoeuvre our efforts in direction of decisions entailing a higher Social Value, which have the potential to solve not merely the convenience challenges, but rather the ever lingering challenges of human establishment like Inequality, Injustice, Poverty, Health and Happiness indeed.</p>
+                        <p>With the dawn of quantum age, it will be imperative to ensure the perfect harmony between evolution in technology and human wisdom and this is where we establish ourselves as mediators of a better world.</p>
+                        <p>For any enquiries contact <a href="mailto:karen@conisance.com">karen@conisance.com</a></p>
+                    </div>
+                </div>
+                <div class="w3-container w3-third about-cards">
+                    <div class="bg-light-1 text-dark-1 w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                        <div class="w3-cell w3-cell-middle">
+                            <h3>Who We Are</h3>
+                            <p>We are Conisance, a global events company connecting innovation and reality. For a sustainable future of our planet, with trust, we catalyse collaborations amongst public, private and international organizations on our networking platforms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-container w3-third about-cards">
+                    <div class="bg-light-1 text-dark-1 w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                        <div class="w3-cell w3-cell-middle">
+                            <h3>What We Do</h3>
+                            <p>We strategically connect Corporates, Government Representatives, Startups, Investors and Academics with our comprehensive event agendas, focused on the critical challenges of the 21st century faced by various industries, inducing subject matter expertise and thriving business & economic goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-container w3-third about-cards">
+                    <div class="bg-light-1 text-dark-1 w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                        <div class="w3-cell w3-cell-middle">
+                            <h3>Our Mission</h3>
+                            <p>We are aligned with the United Nations Sustainable Development Goals and thus our events are structured with the most elite line-up of Speakers, Sponsors and Delegates, to leverage emerging technologies in defining inclusive and equitable solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-cell-row">
+                    <div class="w3-container w3-quarter about-cards">
+                        <div class="bg-light-1 text-dark-1 w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                            <div class="w3-cell w3-cell-middle">
+                                <h3>Passion</h3>
+                                <p>We’re hopelessly convinced that our unrivalled projects will change the world. Every vertical of Conisance operates with a drive to transform our ideas into a remarkable event experience. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-container w3-quarter about-cards">
+                        <div class="bg-light-1 text-dark-1 w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                            <div class="w3-cell w3-cell-middle">
+                                <h3>Pragmatism</h3>
+                                <p>We are research driven and agile. We tackle our problems with high energy, in a sensible and logical manner, balancing our long and short term goals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-container w3-quarter about-cards">
+                        <div class="bg-light-1 text-dark-1 w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                            <div class="w3-cell w3-cell-middle">
+                                <h3>Open-mindedness</h3>
+                                <p>We embrace new ideas, technologies and diverse cultures. We are always open to explore new opportunities giving rise to a positive change. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-container w3-quarter about-cards">
+                        <div class="bg-light-1 text-dark-1 w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                            <div class="w3-cell w3-cell-middle">
+                                <h3>Integrity</h3>
+                                <p>We strongly value honesty and transparency. We conduct every business operation on a fair and ethical two-way basis which is in the best interest of our clients and team members.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="event-info" class="w3-hide w3-animate-opacity">
+            <header class="full-viewport w3-display-container">
+                <div id="event-header" class="w3-twothird w3-display-middle light-color-1 w3-center w3-padding">
+                    <h1 id="event-name" class="w3-center w3-xxlarge">Conisance Access Management and<br> Open Banking Summit 2019</h1>
+                    <div class="w3-cell-row w3-mobile w3-center">
+                        <div id="event-date" class="w3-cell w3-mobile w3-cell-middle">
+                            <p>14th-15th November 2019</p>
+                        </div>
+                        <div id="event-city" class="w3-cell w3-mobile w3-cell-middle">
+                            <p>London, UK.</p>
+                        </div>
+                    </div>
+                    <div class="w3-cell-row w3-mobile w3-center">
+                        <p>#CAMOB2019</p>
+                    </div>
+                    <div class="w3-cell-row w3-center w3-hide-small w3-hide-medium">
+                        <div class="w3-cell w3-mobile w3-third">
+                            <button class="register-now-btn w3-button btn-size w3-large w3-margin w3-border w3-round-xxlarge text-light-1">Register Now </button>
+                        </div>
+                        <div class="w3-cell w3-mobile w3-third">
+                            <button class="sponsorship-btn w3-button btn-size w3-large w3-margin w3-border w3-round-xxlarge text-light-1">Sponsorship</button>
+                        </div>
+                        <div class="w3-cell w3-mobile w3-third">
+                            <button class="brochure-btn w3-button btn-size w3-large w3-margin w3-border w3-round-xxlarge text-light-1">Brochure</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="event-about" class="w3-container bg-light-color-1" style="padding-left: 10vw; padding-right: 10vw;">
+                <div class="w3-center">
+                    <h1 class="w3-xxlarge">About the Event</h1>
+                </div>
+                <div class="w3-container">
+                    <div id="event-about-text" class=" w3-padding w3-center">
+                        <p>Conisance Access Management and Open Banking Summit is a path breaking networking forum, gathering key decision makers from the world's leading Organizations, Startups, and Governments. With thought provoking Case Studies, Keynotes and Panel Discussions, this summit will address the forthcoming challenges and derive best practices on subjects like Digital Identity, Digital Onboarding, and Open Banking.</p>
+                    </div>
+                </div>
+                <div id="event-about-para" class="w3-container w3-margin-top">
+                    <div class="w3-third dark-color-1 event-about-para-element w3-margin-bottom">
+                        <div class="w3-white w3-card w3-padding w3-round-xxlarge dark-color-1 w3-center">
+                            <img id="event-about-img-1" class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/about-sec/Banking-the-unbanked.png">
+                            <h2 class="dark-color-1">Race to Bank the Under/ Unbanked</h2>
+                            <p id="event-about-para-1" class="dark-color-1 w3-hide w3-animate-opacity">Realizing the potential of robust Digital Identification Systems will help every individual on this planet to gain access to their rights and services. Explore the role of Banks and Financial Institutions in building a global standard for Digital Identity by leveraging emerging technologies, as the inclusion frontier represents a massive $380 Billion opportunity for Global Business and Economic Development.</p>
+                            <button id="event-about-para-1-btn" class="w3-button w3-large w3-padding w3-border text-dark-1 w3-round-xxlarge w3-margin-bottom">Show More</button>
+                        </div>
+                    </div>
+                    <div class="w3-third dark-color-1 event-about-para-element w3-margin-bottom">
+                        <div class="w3-white w3-card w3-padding w3-round-xxlarge dark-color-1 w3-center">
+                            <img id="event-about-img-2" class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/about-sec/Always-be-onboarding.png">
+                            <h2 class="dark-color-1">'Always be Onboarding' Mantra</h2>
+                            <p id="event-about-para-2" class="dark-color-1 w3-hide w3-animate-opacity">The overwhelming effect of GAFA (Google, Amazon, Facebook, Apple) have changed the customer landscape. Embracing the rapid developments in technologies like AI, Big Data, Biometrics, Blockchain, etc. has helped financial institutions transform their legacy systems, but has it really made the customer experience frictionless? Get your hands on the optimal onboarding strategies that will play a critical role in meeting your business goals!</p>
+                            <button id="event-about-para-2-btn" class="w3-button w3-large w3-padding w3-border text-dark-1 w3-round-xxlarge w3-margin-bottom">Show More</button>
+                        </div>
+                    </div>
+                    <div class="w3-third dark-color-1 event-about-para-element w3-margin-bottom">
+                        <div class="w3-white w3-card w3-padding w3-round-xxlarge dark-color-1 w3-center">
+                            <img id="event-about-img-3" class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/about-sec/Open-Xperience.png">
+                            <h2 class="dark-color-1">The Open 'X'perience</h2>
+                            <p id="event-about-para-3" class="dark-color-1 w3-hide w3-animate-opacity">Open Banking as we know it may become outdated before it even gets off the ground as there is an opportunity to leapfrog into an integrated marketplace called Open X. Hence the focus will shift from Products to Customer Experience, Assets to Data, Shared Access instead of Ownership, and Collaborations. Experience the evolution around concepts like Lifestyle Banking, Hyper Personalization, Opti Channel experience and more!</p>
+                            <button id="event-about-para-3-btn" class="w3-button w3-large w3-padding w3-border text-dark-1 w3-round-xxlarge w3-margin-bottom">Show More</button>
+                        </div>
+                    </div>
+                    <div class="w3-cell-row w3-mobile w3-center">
+                        <button class="brochure-btn w3-button btn-size w3-large w3-margin w3-border w3-round-xxlarge w3-blue text-light-1">Brochure</button>
+                    </div>
+                </div>
+            </div>
+            <div id="topics-covered" class="w3-container w3-center light-color-1" style="padding-left: 10vw; padding-right: 10vw;">
+                <h1 class="w3-xxlarge">Topics We Cover</h1>
+                <div id="show-vectors" class="w3-container w3-mobile w3-margin-top w3-padding w3-center">
+                    <div class="w3-quarter">
+                        <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/1.png">
+                        <p>Agile Methodologies</p>
+                    </div>
+                    <div class="w3-quarter">
+                        <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/2.png">
+                        <p>Banking 4.0</p>
+                    </div>
+                    <div class="w3-quarter">
+                        <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/3.png">
+                        <p>Behavioural Analytics</p>
+                    </div>
+                    <div class="w3-quarter">
+                        <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/4.png">
+                        <p>Borderless Transactions</p>
+                    </div>
+                    <div id="hidden-vectors" class="w3-hide">
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/5.png">
+                            <p>Cross Selling</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/6.png">
+                            <p>Design Thinking</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/7.png">
+                            <p>Digital-Identity</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/8.png">
+                            <p>Empathy by Design</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/15.png">
+                            <p>Paperless Transactions</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/16.png">
+                            <p>Real Time Analytics</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/17.png">
+                            <p>Universal Digital Identity</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/18.png">
+                            <p>Wearable Banking</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/10.png">
+                            <p>Human Centred Approach</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/12.png">
+                            <p>Intelligent Customer Experience</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/13.png">
+                            <p>Omnichannel Banking</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding vectors-img" src="img/events/event0/topics/14.png">
+                            <p>Open Banking</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-cell-row w3-center w3-padding-32">
+                    <button id="hidden-vectors-btn" class="w3-button w3-large w3-padding w3-border light-color-1 w3-round-xxlarge">View More</button>
+                </div>
+            </div>
+            <div id="speakers" class="w3-center w3-margin-top bg-light-color-1" style="padding-left: 10vw; padding-right: 10vw;">
+                <h1 class="w3-padding-64 w3-xxlarge">Expected Speakers</h1>
+                <div id="show-speakers" class="w3-container w3-mobile">
+                    <div class="w3-quarter">
+                        <div class=" w3-card w3-margin w3-round-xxlarge">
+                            <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/1.png'); ">
+                            </div>
+                            <p>Speaker</p>
+                        </div>
+                    </div>
+                    <div class="w3-quarter">
+                        <div class=" w3-card w3-margin w3-round-xxlarge">
+                            <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/2.png'); ">
+                            </div>
+                            <p>Speaker</p>
+                        </div>
+                    </div>
+                    <div class="w3-quarter">
+                        <div class=" w3-card w3-margin w3-round-xxlarge">
+                            <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/3.png'); ">
+                            </div>
+                            <p>Speaker</p>
+                        </div>
+                    </div>
+                    <div class="w3-quarter">
+                        <div class=" w3-card w3-margin w3-round-xxlarge">
+                            <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/4.png'); ">
+                            </div>
+                            <p>Speaker</p>
+                        </div>
+                    </div>
+                    <div id="hidden-speakers" class="w3-hide">
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/5.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/6.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/7.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/8.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/9.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/10.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/11.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/12.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/13.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/14.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/15.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="min-width: 100px; min-height: 100px; background-position: center; background-size: contain; background-color: white; background-repeat:no-repeat; background-image: url('img/events/event0/speakers/16.png'); ">
+                                </div>
+                                <p>Speaker</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-cell-row w3-center w3-padding-32">
+                    <button id="hidden-speakers-btn" class="w3-button w3-large w3-padding w3-border w3-blue light-color-1 w3-round-xxlarge">View All</button>
+                </div>
+            </div>
+            <div id="attendees" class="w3-container light-color-1 w3-margin-bottom" style="padding-left: 10vw; padding-right: 10vw;">
+                <div class="w3-center w3-padding-64">
+                    <h1 class="w3-xxlarge">Attendees Breakdown</h1>
+                </div>
+                <div class="w3-container">
+                    <img id="event-about-infographics" style="max-width: 50%" class="w3-half w3-hide-small w3-hide-medium w3-padding w3-image" src="img/events/event0/graph1.png">
+                    <img id="event-about-infographics" class="w3-half w3-hide-large w3-padding w3-image" src="img/events/event0/graph1.png">
+                    <div id="event-about-text" class="w3-half w3-padding w3-border text-light-1 w3-card w3-round-xxlarge">
+                        <h4 class="w3-padding">Departments</h4>
+                        <p class="w3-padding">
+                            &#8226; Digital Transformation<br>
+                            &#8226; Risk Management<br>
+                            &#8226; Mobile Banking<br>
+                            &#8226; Strategy & Operations<br>
+                            &#8226; Retail Banking<br>
+                            &#8226; R&D<br>
+                            &#8226; Product Development<br>
+                            &#8226; Customer Experience<br>
+                            &#8226; IT<br>
+                            &#8226; Data Analytics<br>
+                            &#8226; Digital Onboarding<br>
+                            &#8226; AML/KYC<br>
+                            &#8226; Digital Identity & Fraud Prevention<br>
+                            &#8226; Identity and Access Management<br>
+                            &#8226; Client Solutions<br>
+                            &#8226; Global Partnerships <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="conisance-community" class="w3-container w3-padding-32 light-color-1 w3-center" style="padding-left: 10vw; padding-right: 10vw;">
+                <h1 class="w3-padding-32 w3-xxlarge">Conisance Community</h1>
+                <div id="event-about-para" class="w3-container w3-margin-top">
+                    <div class="w3-third dark-color-1 event-about-para-element w3-margin-bottom">
+                        <div id="event-about-para-1" style="min-height: 480px;" class="w3-white w3-card w3-padding w3-round-xxlarge dark-color-1">
+                            <img class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/con-community-sec/Unrivalled-Networking.png">
+                            <h2 class="dark-color-1">Unrivalled Networking</h2>
+                            <p class="dark-color-1">Set one-on-one meetings, brainstorm, and network with the most relevant industry leaders, prominent speakers, innovative startups, and media partners.</p>
+                        </div>
+                    </div>
+                    <div class="w3-third dark-color-1 event-about-para-element w3-margin-bottom">
+                        <div id="event-about-para-1" style="min-height: 480px;" class="w3-white w3-card w3-padding w3-round-xxlarge dark-color-1">
+                            <img class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/con-community-sec/Critical-Insights.png">
+                            <h2 class="dark-color-1">Critical Insights</h2>
+                            <p class="dark-color-1">Enhance your business intelligence with access to incisive Case Studies and Discussions that are based on our thoroughly researched and comprehensive agendas.</p>
+                        </div>
+                    </div>
+                    <div class="w3-third dark-color-1 event-about-para-element w3-margin-bottom">
+                        <div id="event-about-para-1" style="min-height: 480px;" class="w3-white w3-card w3-padding w3-round-xxlarge dark-color-1">
+                            <img class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/con-community-sec/Long-Term-Collaborations.png">
+                            <h2 class="dark-color-1">Long Term Collaborations</h2>
+                            <p class="dark-color-1">Achieve your long term collaboration goals by efficiently engaging with the right people prior, during, and post event via the Conisance App.</p>
+                        </div>
+                    </div>
+                    <div class="w3-cell-row w3-center w3-hide-small w3-hide-medium">
+                        <div class="w3-cell w3-mobile w3-third">
+                            <button class="register-now-btn w3-button btn-size w3-large w3-margin w3-border w3-round-xxlarge text-light-1">Register Now</button>
+                        </div>
+                        <div class="w3-cell w3-mobile w3-third">
+                            <button class="sponsorship-btn w3-button btn-size w3-large w3-margin w3-border w3-round-xxlarge text-light-1">Sponsorship</button>
+                        </div>
+                        <div class="w3-cell w3-mobile w3-third">
+                            <button class="brochure-btn w3-button btn-size w3-large w3-margin w3-border w3-round-xxlarge text-light-1">Brochure</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-container full-viewport bg-light-color-1 w3-center" style="padding-left: 10vw; padding-right: 10vw; padding-bottom: 10vh;">
+                <h1 class="w3-margin-bottom w3-xxlarge">Conisance Launchpad</h1>
+                <div class="w3-half w3-padding  w3-center">
+                    <img class="w3-image w3-round-xxlarge" src="img/events/event0/Conisance-Launchpad.jpg" style="max-height: 700px;">
+                </div>
+                <div id="launchpad-content" class="w3-padding w3-half">
+                    <div class=" w3-cell-row">
+                        <div class="w3-cell w3-cell-middle w3-card w3-white w3-padding w3-round-xxlarge w3-margin-bottom" style="height: 700px;">
+                            <h2>Boost Your Startup!</h2>
+                            <p>Conisance Launchpad provides the perfect atmosphere for your Startup to establish lasting relations with industry peers, build brand recognition, and create tangible results with opportunities like Product Showcasing, Speaking slots, Campaigns and much more!</p>
+                            <p>Join the Industry Heavyweights, VCs, Mentors, and Key Decision Makers around the globe, in a community that transcends beyond a single event, on our digital platforms.</p>
+                            <p>Tell us your goals and together we'll craft a unique and unforgettable experience that will exceed your expectations.</p>
+                            <button id="get-in-touch-btn" class="w3-button w3-large w3-padding w3-border w3-blue light-color-1 w3-round-xxlarge">Get in Touch</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-container full-viewport w3-center w3-display-container" style="padding-left: 10vw; padding-right: 10vw; padding-bottom: 10vh;">
+                <div class="w3-display-middle" style="min-width: 80vw;">
+                    <h1 class="w3-margin-bottom w3-xxlarge text-light-1">Venue</h1>
+                    <div class="w3-half w3-padding w3-center">
+                        <img class="w3-image w3-round-xxlarge" src="img/events/event0/venue.jpg" style="max-height: 300px;">
+                    </div>
+                    <div id="launchpad-content" class="w3-padding w3-half">
+                        <div class=" w3-cell-row">
+                            <div class="w3-cell w3-cell-middle w3-card w3-white w3-padding w3-round-xxlarge w3-margin-bottom" style="height: 300px;">
+                                <h4>Conisance Access Management and Open Banking Summit 2019</h4>
+                                <p>14th-15th November 2019</p>
+                                <p>London, UK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="contact-section" class="full-viewport w3-center text-light-1">
+            <div class="" style="min-width: 100vw;">
+                <h1 class="w3-xxlarge">Contact us</h1>
+                <div id="contact-form">
+                    <form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/devconisance@gmail.com" method="post" class="bg-light-solid-1 text-dark-1 w3-padding-32 w3-margin-bottom w3-round-xxlarge">
+                        <fieldset id="fs-frm-inputs">
+                            <select class="w3-select bg-light-1 text-dark-1 w3-quarter w3-margin-top w3-margin-bottom" name="salutation" type="salutation" required>
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Ms">Ms</option>
+                                <option value="Dr">Dr</option>
+                                <option value="Prof">Prof</option>
+                            </select>
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border w3-margin-bottom" type="text" name="name" id="full-name" placeholder="Full Name" required>
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border w3-margin-bottom" type="text" name="position" id="position" placeholder="Position" required>
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border w3-margin-bottom" type="text" name="company-name" id="company-name" placeholder="Company Name" required>
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border w3-margin-bottom" type="email" name="_replyto" id="email-address" placeholder="Email" required>
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border w3-margin-bottom" type="telephone" name="telephone" id="telephone" placeholder="Telephone" required>
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border w3-margin-bottom" type="address" name="address" id="address" placeholder="Address" required>
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border w3-margin-bottom" type="text" name="city" id="city" placeholder="City" required>
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border w3-margin-bottom" type="text" name="country" id="country" placeholder="Country" required>
+                            <div class="w3-block w3-left-align w3-margin-bottom"><h4>How Did you here about the event</h4></div>
+                            <select class="w3-block w3-select bg-light-1 text-dark-1 w3-margin-bottom w3-left" name="medium-to-website" type="medium-to-website" required>
+                                <option value="Search-Engine">Google or Search Engine</option>
+                                <option value="Email">Email</option>
+                                <option value="Telemarketing">Telemarketing</option>
+                                <option value="Word-of-mouth">Word of Mouth</option>
+                                <option value="Press-Release">Press Release</option>
+                                <option value="Social-Media">Social Media</option>
+                                <option value="Other-Website">Other Website</option>
+                                <option value="Print-Publication">Print Publication</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="w3-block w3-left-align"><h4>Interested In<h4></div>
+                            <div class="w3-block w3-left-align">
+                                <div class="w3-third">
+                                    <input class="w3-check w3-left-align checkbox_required_group" name="Sponsorship" type="checkbox" checked>
+                                    <label class="">Sponsorship</label>
+                                </div>
+                                <div class="w3-third">
+                                    <input class="w3-check w3-left-align checkbox_required_group" name="Delegate-Attendance" type="checkbox">
+                                    <label class="">Delegate Attendance</label>
+                                </div>
+                                <div class="w3-third">
+                                    <input class="w3-check w3-left-align checkbox_required_group" name="Speaking-Opportunity" type="checkbox">
+                                    <label class="">Speaking Opportunity</label>
+                                </div>
+                                <div class="w3-third">
+                                    <input class="w3-check w3-left-align checkbox_required_group" name="Exhibition-Booth" type="checkbox">
+                                    <label class="">Exhibition Booth</label>
+                                </div>
+                                <div class="w3-third">
+                                    <input class="w3-check w3-left-align checkbox_required_group" name="Event-Brochure" type="checkbox">
+                                    <label class="">Event Brochure</label>
+                                </div>
+                                <div class="w3-third">
+                                    <input class="w3-check w3-left-align checkbox_required_group" name="Conisance-Launchpad" type="checkbox">
+                                    <label class="">Conisance Launchpad</label>
+                                </div>
+                                <div class="w3-third">
+                                    <input class="w3-check w3-left-align checkbox_required_group w3-margin-bottom" name="Conisance-App" type="checkbox">
+                                    <label class="">Conisance App</label>
+                                </div>
+                            </div>
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border w3-margin-bottom" rows="6" name="message" id="message" placeholder="Queries/Requirements" required></input>
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border w3-margin-bottom" type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                        </fieldset>
+                        <input class="w3-button btn-size w3-large w3-padding w3-border text-light-1 w3-round-xxlarge w3-margin-top w3-blue" type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="login" class="w3-modal w3-center text-light-1 w3-animate-opacity">
+            <div class="w3-display-middle" style="min-width: 100vw;">
+                <div id="contact-form">
+
+                    <form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/devconisance@gmail.com" method="post" class="bg-light-solid-1 text-dark-1 w3-padding-32 w3-margin-bottom w3-round-xxlarge">
+                        <h2 class="w3-xxlarge">Register</h2>
+                        <fieldset id="fs-frm-inputs">
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large" type="text" name="name" id="name" placeholder="name" required="">
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large" type="email" name="_replyto" id="email-address" placeholder="email" required="">
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large" type="telephone" name="telephone" id="telephone" placeholder="telephone" required="">
+                            <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large" type="hidden" name="_subject" id="email-subject" value="Register Form Submission">
+                        </fieldset>
+                        <input class="w3-button btn-size w3-large w3-padding w3-border text-light-1 w3-round-xxlarge w3-margin-top w3-blue" type="submit" value="Send">
+
+                    </form>
+                    <button id="login-cancel-btn" onclick="document.getElementById('login').style.display='none'" style="height: 120px; width: 120px;" class="w3-button w3-padding w3-margin-bottom text-light-1 w3-jumbo w3-circle"><b>&times;</b></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="policies" class="w3-modal w3-center">
+            
+            <div class="w3-display-middle" style="min-width: 100vw;">
+                <button id="login-cancel-btn" onclick="document.getElementById('policies').style.display='none'" class="w3-margin w3-button w3-large w3-padding w3-border text-light-1 w3-round-xxlarge">&times;</button>
+                <div class="w3-white w3-small w3-padding-32 w3-margin-bottom w3-round-xxlarge w3-padding" style="margin: auto; max-width: 80vw; max-height: 80vh; overflow: scroll;">
+                    
+                        <p class="w3-tiny">
+                        <b>Anti-harassment policy</b><br>
+
+                        We are dedicated to providing an enjoyable, respectful and harassment-free event experience for everyone regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age, or religion. Sexual language and imagery is not appropriate for any event venue, including talks.
+
+                        We do not tolerate harassment of event participants in any form and we expect all participants to conduct themselves in a professional and appropriate manner. Event participants violating these rules may be sanctioned or expelled from the event, without a refund, at the discretion of the event organisers.
+
+                        Harassment includes verbal comments that reinforce social structures of domination related to gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age, religion, sexual images in public spaces, deliberate intimidation, stalking, following, harassing photography or recording, sustained disruption of talks or other events, inappropriate physical contact, and unwelcome sexual attention.
+
+                        Participants asked to stop any harassing behaviour are expected to comply immediately.
+
+                        If a participant engages in harassing behaviour, the event organisers may take any action they deem appropriate, including warning the offender or expulsion from the event with no refund. If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of event staff immediately.
+
+                        We expect participants to follow these rules at all event venues and event-related social events.
+                        Emergency contact details
+
+                        We have volunteers/executives on site, many of whom are women and are clearly identifiable by their volunteer t-shirts/badges/tags. They have been briefed to immediately escalate incidents to their team leads, who will in turn escalate to the venue co-ordinator, who will then liaise with medical or security staff, or Police authorities, when and where required.
+
+                        Additionally, there are easily identifiable security staff, throughout the venue, who are professionally trained according to best practices for events of all sizes and nature.
+
+                        These statements has been adapted from- geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy.
+
+                        For questions or feedback regarding these statements, please contact karen@conisance.com
+
+
+                        If you wish to report a harassment incident at our event, please contact karen@conisance.com providing details of the incident. If you would like to report the incident anonymously, simply let us know and we will keep your identity anonymous. If you choose not to remain anonymous, a member of our team may reach out to you directly to discuss the incident further.
+
+
+
+
+                        <br><b>
+                        Accessibility policy
+                        </b><br>
+
+
+                        Will Conisance Global accommodate my disability-related needs?
+
+                        You are responsible for advising us at the time of your booking regarding any special access requirements you have. To ensure we have sufficient time to meet your needs, requests for accommodation must be made at least three weeks prior to the event. If we have not been advised of your special access requirements at least three weeks in advance of the event, we cannot guarantee we can accommodate your requests.
+
+                        Is accessible parking available?
+
+                        Disabled parking will be available on a first-come-first-served basis for guests with a valid disabled parking pass. Please let us know in advance if you require access to disabled parking, and we will reserve a space for you at the respective venue.
+
+                        Is the venue wheelchair accessible?
+
+                        Entry to the venue will be wheelchair accessible. On arrival, please proceed through registration where you will be issued your accreditation. ‘Easy access’ registration is available should you wish to avail of it.
+
+                        Are there accessible toilets available?
+
+                        Yes, accessible toilet facilities are available onsite.
+
+                        Is there elevator access?
+
+                        Yes, there will be elevator access at the venues.
+
+                        Is there accessible seating at stages?
+
+                        We can accommodate your requests and reserve the seating for you and your essential companions. 
+
+                        Is there accessible accommodation nearby?
+
+                        There are several hotels close to the venue that can facilitate guests with disabilities or special needs. 
+
+                        Can I request a ticket for an essential companion?
+
+                        If you require the assistance of an essential companion at the event, please contact us at please contact karen@conisance.com
+
+
+
+
+                        <br><b>
+                        Cookies policy
+                        </b><br>
+
+                        1. What are cookies?
+                        1.1. What are cookies and why are they important for user experience?
+
+                        This website uses cookies.
+
+                        Cookies are text files containing small amounts of information which are downloaded to your computer or mobile device when you visit a website. Cookies are then sent back to the originating website on each subsequent visit, or to another website that recognises that cookie. Cookies are useful because they allow a website to recognise a user’s device.
+
+                        Cookies do lots of different and useful jobs, such as letting you navigate between pages efficiently, remembering your preferences. They help us understand how our website is used and improve your online experience. They can also help to ensure that adverts you see online are more relevant to you and your interests.
+
+                        2. What type of cookies do we use?
+                        2.1 Which cookies are used by us?
+
+                        Most of the cookies we use are session cookies, which are automatically deleted from your hard disk at the end of the browser session. Session cookies are needed to help the website function.
+
+                        In addition to these we also use longer-term cookies that stay on your hard disk. On a subsequent visit it is then automatically recognised that you have previously visited us, and we know which input and settings you prefer. These cookies are stored on your hard disk and are automatically deleted after 30 days. They make our website more user-friendly, more effective and more secure. These cookies make it possible for us to show you information that is relevant to you. The sole purpose of these cookies is to adapt our content to your needs as well as to make browsing our pages as enjoyable as possible.
+
+                        2.2 What data is stored in the cookies?
+
+                        Only pseudonymous data is stored in our cookies. On activation, the cookie is allocated an identification number; we do not allocate personal data to this identification number. Your name, your IP address and other such data that might allow the cookie to be traced to you directly are not stored in the cookie. We receive only aggregated information, relating for example to which of our pages have been visited, which products were viewed, etc.
+
+                        2.3 What is onsite targeting?
+
+                        Data is collected on our website using cookies for optimisation of our advertising and of the entire online experience. This data is not used to identify you personally but solely serves the purpose of conducting a pseudonymous evaluation of the use made of our pages. With this technology we can present advertising, special offers and services to you, the content of which is based on information obtained from a connection to click-stream analysis (for example, advertising that is based on the fact that during the past few days only you have viewed a specific page). Our aim here is to make our offers as relevant to you as possible and to present advertising that corresponds to your areas of interest.
+
+                        2.4 Are there also cookies from third-party suppliers (so-called “third-party cookies”)?
+
+                        We makes use of a number of web partners, for example, Google Analytics, Facebook and Doubleclick who help to make our websites more interesting for you. This is why, when visiting our websites, the cookies of these companies may also be stored on your hard disk. These cookies are deleted automatically after a pre-specified period. The cookies of our partner companies also contain solely pseudonymous or anonymous aggregated data. This relates, for example, to data on which pages you have looked at, whether anything was bought or a signup occurred, among other actions. Here, some of our advertising partners also collect information from our websites on which pages you have previously visited in order to be able to show you advertising that best complies with your interests.
+
+                        2.5 Retargeting
+
+                        Our websites make use of so-called re-targeting technologies. We use these technologies to make our offering more interesting for you. Retargeting allows users who have already shown an interest in our events to also be provided with suitable advertising on the websites of our partners. The use of personalised, interest-oriented advertising is generally more interesting for users than advertising that has no such personal customisation. The use of this advertising approach by our partners is undertaken on the basis of a cookie technology and an analysis of previous utilisation behaviour. This form of advertising is completely pseudonymous. On using our sites, cookies are deployed and thereby usage data is collected from you, stored and utilised. Your data is furthermore stored in cookies beyond the end of the browser session so that it can be called up again on your next visits to the websites.
+                        2.6 How can you prevent the storage of cookies?
+
+                        In your browser you can enable a setting that storage of cookies is only permissible when you agree to it, and thereby prevent the further storage of cookies in the future. You can modify cookie settings from your respective browsers' settings menu.
+                        You can obtain up-to-date information about blocking and deleting cookies via these links: 
+                        1.  https://support.google.com/chrome/answer/95647?hl=en (Chrome);
+                        2.  https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences (Firefox);
+                        3.  http://www.opera.com/help/tutorials/security/cookies/ (Opera);
+                        4.  https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-c ookies (Internet Explorer);
+                        5.  https://support.apple.com/kb/PH21411 (Safari); and
+                        6.  https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy (Edge).
+
+
+
+                        3. Log Files
+
+                        With each visit to our website, usage data is transmitted by the respective Internet browser and is stored in record files, the so-called server log files. The records stored in this way contain data on date and time of the call-up, name of the page called up, IP address, referrer URL (URL of origin, from which you came to the websites), and the quantities of data transferred, product information and the version of the browser used. These log file data records are evaluated by us, to help us further improve our websites, as well as to make our pages more user-friendly, to detect and correct errors more quickly and to control server capacities. We also use log file data records to defend our site against attacks, e.g. in the context of DDOS attacks, which are intended to block access to our site by overloading it with enquiries.
+
+                        4. Web analysis
+
+                        In order to continuously improve and optimise our offers, we make use of tracking technologies. For this purpose, we enlist the services of Google Analytics.
+                        4.1 Google Analytics
+
+                        This website makes use of Google (Universal) Analytics, a web analysis service from Google Inc. (www.google.com). Google (Universal) Analytics deploys methods that make it possible to analyse the use made of the website by you, e.g. the so-called “cookies”, which are text files that are stored on your computer. The information generated on your use of this website is transmitted, as a rule, to a Google server in the USA and stored there. By activating the IP-anonymise function on this website the IP address is shortened, within the member countries of the European Union or in other contracting states that were party to the agreement on the European Economic Area, before further transfer. Only in exceptional cases is the full IP address sent to a Google server in the USA and shortened there. The anonymised IP address transferred by your browser within the framework of Google Analytics is not brought together with other Google data.
+
+                        You can prevent the acquisition of the data generated by the cookie relating to your use of the website (incl. your IP address) by Google, as well as its processing by Google, if you download and install the browser plug-in available here. As an alternative to the browser plug-in, you can click this link in order to prevent recording by Google Analytics on this website in the future. In this case, an opt-out cookie will be placed in your terminal device. Please note that on deleting all cookies on your computer, this opt-out cookie will also be deleted, i.e. if you still want to prevent anonymised data acquisition by Google Analytics you will have to reset the opt-out cookie once again. The opt-out cookie is set for each browser and computer. If you visit our websites from home and from your place of work, or with different browsers, you will have to activate the opt-out cookie in the various browsers or on different computers. 
+
+
+
+                        5. Retargeting and data acquisition by third parties for banner ads
+
+                        In the context of re-targeting and banner ads, RISE make use of the services of third parties, which set cookies on our sites. These are the following companies:
+                        Doubleclick by Google, Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA;
+                        Facebook Inc., 1601 S. California Ave, Palo Alto, CA 94304, USA;
+                        Twitter, Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103 U.S.A;
+                        LinkedIn, 222 2nd St, San Francisco, CA 94105, USA; 
+                        Examples of other advertising cookies we use: 
+                        Formstack , Stripe , Ti.to, Heapanalytics , Optimizely , Optimize , Intercom , Facebook , Twitter, LinkedIn , Google Tag Manager, Doubleclick, NR-Data.
+                        If you have questions about the use of cookies on our websites, please contact us at karen@conisance.com
+
+
+
+
+                        <br><b>
+                        Privacy Policy
+                        </b><br>
+
+
+                        1. Scope
+                        Conisance Global (“we”, “us”, “our”), is committed to protecting your personal information. We invite you to read this Privacy Policy, which explains the types of information collected and created in connection with the relevant Event, how and why we use such information, who we share it with and your legal rights.
+                        Unless indicated otherwise, this Privacy Policy relates to our use of any personal information we collect or use in relation to the following services (collectively, the “Services”):
+                        – the Event 
+                        – the Event websites and their related subdomains including those pertaining to registration for attendance at the Event and to be a volunteer at the Event;
+                        – the Event apps;
+                        – online surveys relating to the Event;
+                        – messages sent via the Event support portal; and
+                        – the Event official social media channels.
+                        Personal information processed in connection with the Services is controlled by Conisance Global.
+                         
+                        2. Information we collect
+                        When we provide the Services, we collect and receive information in several different ways. In many cases, you choose what information to provide, although some information is required for us to provide you the Services. 
+                        2.1 Directly from you, or approved third parties. We collect a variety of information from you when you provide it to us directly, when we request it from you, or when you give us permission to get it from a third party source.
+                        – Attendee registration information. When you register to attend an Event, you must provide us with basic information such as name, address, email address, telephone number, and date of birth. We also give you the option to provide additional information. 
+                        – Volunteer registration information. When you register to volunteer at an Event, you must provide us with basic information such as name, address, email address, telephone number, and date of birth. We also give you the option to provide additional information. 
+                        – Payment and credit card information. When purchasing tickets to attend an Event, you must provide us with your name, address, telephone number, email address, credit card, and debit card or bank information. This information will only be shared with third parties such as our ticketing partner, Ti.to, PayPal or Stripe, who perform tasks required to complete the purchase transaction.
+                        – Event app profile information. To attend an Event, you are required to download an Event app. You will have the option of providing us with additional profile information in the Event app, such as name and email address, and whether you want your profile information to be discoverable within the app by other attendees and partners of the Event. 
+                        – Event survey responses. We may ask you to participate in optional surveys regarding your experience at the Event in order to help us improve the event and for related commercial purposes. 
+                        – Third party social media accounts. If you choose to connect your social media account(s) with the Event app, we may receive certain information from that account, such as your title, picture, and other information you authorize. We may use your friends or connections lists to make recommendations in the Event app, for example to suggest mutual connections.
+                        – Call recordings. We may contact you for the purposes of sales, investment, or in the context of your past or future attendance at or participation in an Event. In certain cases, we may record such calls for our legitimate interests in staff training and development.
+                        2.2 From your browser or device.
+                        We automatically collect certain information from your browser or device when you use certain Services or read a message from us. For example, we collect data regarding the device you are using, such as its unique identifier and operating system; logs will be recorded by our servers based on the information sent from your app or browser; and information may be recorded by cookies and similar technologies when you use the Services. Please review our cookies policy for further detail on how we use cookies and similar technologies on our Services.
+                        2.3 From public sources.
+                        We also collect publicly available information from your social media accounts (facebook, twitter, linkedin, etc.) for instance- number of followers you have on your Twitter account.
+                         
+                        3. How we use your information
+                        We use your information in order to provide, operate, improve, understand, customize, support, and market our Services, including:
+                        3.1 Providing and improving the requested Services. We use your personal information as necessary to run the Event, such as to register attendees, issue tickets, facilitate information sharing with partners with whom you have consented for us to share information, and provide you with relevant connections and content during the Event based on this information and your use of the Event app.
+                        3.2 Communicating with you. We use your personal information to contact you regarding your registration to attend, volunteer or speak at an Event, to notify you of any changes to our policies and practices, for commercial, sales or investment purposes, and to respond to any requests or inquiries you may submit to us. If you subscribe to marketing, such as newsletters, we will use your information as described below. We may collect information from these communications to improve our Services and for the training and development of our staff. 
+                        3.3 Marketing. If you opt-in to receiving marketing communications from us, we will use your personal information for outreach and marketing, such as to send you information about our future Events and to exhibit attending companies. You can opt-out of these communications by using the unsubscribe links in our communications or by changing your Event app settings. We may also use your information in order to market the Events. For example, we sometimes use your image in our published list of Event attendees. If you want to object to this use, please contact us here at karen@conisance.com
+                        3.4 Advertising. We use your personal information to be able to show you advertising on other websites. Please also review our cookies policy for your options to control how we use cookies and similar technologies for advertising.
+                         
+                        4. Legal bases for processing your information
+                        We rely on a number of bases to lawfully process your personal information for the purposes described in this Privacy Policy. We only process your personal information: 
+                        – when necessary to perform the Terms and Conditions or to provide you with the Services;
+                        – where you have consented to the processing, which you may revoke at any time; 
+                        – when necessary for us to comply with a legal obligation, a court order, or to exercise and defend legal claims;
+                        – when necessary to protect your vital interests, or those of others, such as in the case of an emergency;
+                        – where you have made the information manifestly public; 
+                        – where necessary in the public interest; and
+                        – where necessary for the purposes of our, your, or a third party’s legitimate interests, such as those of partners or other attendees or volunteers.
+                         
+                        5. Our legitimate interests
+                        As indicated above, in certain cases we use your information where necessary to pursue our, your and others’ legitimate interests, including where necessary to:
+                        – Keep the Services safe and secure. We use your information as it is necessary to pursue our legitimate interests, or those of our attendees, our volunteers or our partners in ensuring the Event is a safe and secure event, such as enforcing our Terms and Conditions. We also act in the legitimate interests of these parties with respect to our Event website, app and other Services, such as by implementing and enhancing security measures and protections and protecting against fraud, spam and abuse.
+                        – Provide, develop and improve the Services. We process your information as necessary to pursue our legitimate interests in improving the Event and our other Services, such as our Event websites and apps. For example, we use your information in order to conduct access control and enforce security at the Events. We also use your information to conduct data analysis and analytics across our Services. In certain cases, and where you have not objected, we may record sales and other calls to you for our business interests in the training and development of our staff. 
+                        – Market the Services. We process your information in accordance with our legitimate interests of marketing the Event and the Services to you. For example, we use your information to market future Events to you and to exhibit attending companies. We may also use your image in our marketing materials in order to highlight the attendees participating in the Events. We also use photos and audio-visual footage from past Events which may contain your image or voice. If you want to exercise your right to object to any of these uses, please email us at karen@conisance.com
+                         
+                        6. Sharing with third parties
+                        We share information with attendees, service providers, affiliates, partners, and other third parties where it is necessary to perform the Terms and Conditions, to provide the Services, and for other purposes described in the Privacy Policy. 
+                        6.1 Sharing with other sponsors and attendees. Our Services, such as the event app, provides our sponsors and attendees with the means of making connections with other attendees. We may provide some of our sponsors with the your (attendee’s) profile (name, company, job title, & email address) prior to the event for a better networking experience. The profile information that you choose to provide us will be accessible to other attendees of the event, subject to your settings in the app. QR code scanning functionality on your badge is activated by default. You can provide your information to other attendees and partners by allowing them to scan the QR code on your attendee badge. 
+                        6.2 Marketing. In order to further our legitimate interests in marketing the Services, we rely on third-party marketing platforms and service providers to assist us and perform certain marketing services for us. 
+                        6.3 Advertising. We share your personal information with common advertising platforms such as Facebook, Google and LinkedIn to show you advertising when you use those services. Please also review our cookies policy for your options to control how we use cookies and similar technologies for advertising. 
+                        6.4 Third party service providers. We may share your personal information to help us operate, provide, improve, understand, customize, support, and market our Services. These third parties provide us with services including for customer support, data storage and website hosting, ticketing and payments processing, legal advice and compliance, and marketing and data analysis. These third parties are contractually required to use it only to provide their service to us, and prohibited from using it for their own purposes. 
+                        6.5 Business re-organisation. In instances where we or our affiliates are subject to a re-organisation, such as a merger or acquisition of some or all of its assets, we may, in accordance with our legitimate interests, need to share information in the course of the transaction. In such circumstances, your information may be disclosed, where permitted by applicable law, in connection with such corporate restructuring, sale, or assignment of assets, merger, or other changes of control or our financial status.
+                        6.6 Legal and safety reasons. We may retain, preserve, or share your personal information if we have a good-faith belief that it is reasonably necessary to (a) respond, based on applicable law, to a legal request (such as, a subpoena, search warrant, court order, or other request from government or law enforcement); (b) detect, investigate, prevent, and address fraud and other illegal activity, security, or technical issues; (c) protect our rights, property, or safety; (d) enforce our Terms and Conditions or any other agreements we have with you; or (e) prevent physical injury or other harm to any person or entity, including yourself and members of the general public. 
+                        6.7 Aggregated information. We may also share aggregated or de-identified information, such as counts of attendee job titles or their affiliated companies, with companies we do business with, including our advertisers, partners as well as other organisational members.
+                         
+                        7. Data retention
+                        We will retain your personal information for as long as is necessary, up to a period of three years after such information is collected, to achieve the purposes set out in this Privacy Policy, such as to provide you with the Services. If we record a call to you for training and development purposes, we will delete the recording after a period of 6 months. We may also need to retain some of your information for a longer period to comply with our legal and regulatory obligations, to resolve disputes, and to enforce our Terms of Service.
+                         
+                        8. Data transfers
+                        As a global business, we access and transfer information around the world. If you are based in the EU, this means that we access and transfer your personal information outside the EU, including in and to the United States. The privacy protections and the rights of authorities to access your personal information in some of these countries may not be the same as in your home country. We transfer your personal information in accordance with law, and take steps to ensure that your information is appropriately protected.
+                        In particular, where we transfer information to countries that are not viewed as providing adequate protections, we generally rely on an approved mechanism known as the “standard contractual clauses” to protect the information transferred. These are template contracts published by the European Commission containing approved commitments to protect the privacy and security of the information transferred.
+                         
+                        9. Your rights
+                        You have a number of rights in relation to your information that we process. While some of these rights apply generally, certain rights apply only in certain limited cases. We describe these rights below. 
+                        9.1 Access and Porting. You can access much of your information by logging into your Event profile. If you require access to additional information, or you do not have an Event profile, please contact us. Where legally required, we will provide your information in an easily accessible format and assist in transferring some of this information to third parties.
+                        9.2 Rectify, Restrict, Delete. You can amend, update and delete some of your information by logging into your Event profile. If you don’t have an Event profile, or want us to amend, update or delete other information, please contact us.
+                        9.3 Object. Where we process your information based on the legitimate interests described above, or in the public interest, you can object to the processing in certain circumstances. We will generally stop processing your information unless we have compelling grounds to continue processing, such as where needed for legal reasons. Where we use your information for direct marketing, you can always object using the unsubscribe link in such communications, changing your profile settings or by contacting us. Where we inform you that we will record a call to you, we will provide you with the opportunity to object to such recording. 
+                        9.4 Revoke consent. You have the right to withdraw your consent at any time. For example, if we ask for your consent for direct marketing purposes, you can revoke your consent using the unsubscribe link in such communications, changing your profile settings or by contacting us.
+                        9.5 Complain. If you wish to raise a concern about our use of your information (and without prejudice to any other rights you may have), you have the right to do so. You can contact us or your local supervisory authority.
+                         
+                        10. Security
+                        The security of your personal information is important to us. We strive to use appropriate technical and organisational to protect your personal information. Despite these measures, the Internet is not a fully secure environment and we cannot guarantee that your personal information won’t be intercepted or improperly accessed.
+                         
+                        11. Children
+                        Attendees under 18 years of age may attend the Event if accompanied by an adult or guardian, depending on the age of the attendee. You can find further information our age limitations in our Terms and Conditions. 
+                         
+                        12. Changes to this Privacy Policy
+                        We may update this Privacy Policy from time to time so please review it occasionally. If we make material changes, we will take steps to notify you. The date of the most recent revisions will appear on the top of this page. 
+
+
+                        <br><b>
+                         Terms and Conditions
+                        </b><br>
+
+                        Payments
+                        Payment should be made in full immediately after submitting the registration form. 
+                        Payment should always be made in Euros unless indicated otherwise.
+                        Conisance Global accepts all kinds of debit and credits cards. Bank Transfer option may be allowed only on the condition that the payment is processed within 3-4 working days upon receiving the proforma invoice. 
+                        The fee of the event includes the possibility to download speakers’ presentations, access to the conference hall & materials, refreshments, lunches and snacks.
+                        In case the payment is not processed before the final due date, Conisance Global reserves the right to cancel the registration of the respective attendee. Overdue payments can be charged with a statutory interest rate of 8%.
+                        Each delegate will be responsible for their own hotel accommodation and travel expenses, however Conisance Global will negotiate and offer the best possible hotel rates for its delegates in the same 4-star or 5-star hotel in which the event will take place.
+                        Cancellation Policy
+                        Incase a delegate would like to cancel their participation for some unexpected eventualities, such requests must be submitted at least 4 weeks prior to the event in order to obtain a full credit note for any future event organised by Conisance Global. The fees charged are strictly non-refundable. 
+                        Non-attendance, otherwise referred as a “no show” does not signify cancellation.
+                        Conisance Global will not be held responsible for events cancelled for reasons beyond its control such as natural disasters, accidents, sabotage, trade or industrial disputes, outbreak of disease, hostilities, terrorism, etc. However, a full credit note would be given in each of these cases. 
+                        Data Protection
+                        Conisance Global agrees to keep clients’ information confidential in its database.
+                        The client gives Conisance Global the authority to keep their information in its database and use the information in any way necessary in connection with the event, otherwise consent should be sought.
+                        Client information will be removed immediately after receiving a request from the respective client. Please contact karen@conisance.com for such requests.
+                        For more information on Data Protection, kindly refer to our Privacy Policy.
+                        Please Note
+                        Conisance Global reserves the right to postpone the event to a later date or make changes to the location or confirmed speakers.
+                        If a client decides to cancel their participation for these reasons the client will receive a full credit note which covers the amount paid to attend any future event organised by Conisance Global.
+                        The hotel information may not be provided at the time of booking but should be ready at least one month prior to the event.
+                        In such cases, please bear with us.
+                        Copyright
+                        The information included in Conisance Global’s Event Agenda is strictly meant for the company or person who directly received the agenda. Under NO circumstance should this agenda be published on the internet or be made available to the general public without the prior consent of Conisance Global. 
+                        All intellectual property rights in all materials produced and distributed by Conisance Global in connection with this event are expressly reserved and any unauthorised duplication, publication or distribution is strictly forbidden.
+
+                        *************************************************************************************
+
+                        </p>
+                    </div>
+                </div>
+        </div>
+
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jq.js"></script>
+    </body>
+</html>
