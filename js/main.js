@@ -17,13 +17,13 @@ document.getElementById("know-more-btn").addEventListener("click",  function(){
 //-------------- Event More Section --------------//
 //Know More Button Clicked
 document.getElementById("more-events-btn").addEventListener("click",  function(){
-  if (document.getElementById("more-events-btn").innerHTML == "More Events") {
+  if (document.getElementById("more-events-btn").innerHTML == "Event Calendar") {
     document.getElementById("more-events").classList.remove("w3-hide");
     document.getElementById("more-events-btn").innerHTML = "Hide";
   } else {
     document.getElementById("more-events").classList.add("w3-hide");
     document.getElementById("events-section").scrollIntoView();
-    document.getElementById("more-events-btn").innerHTML = "More Events";
+    document.getElementById("more-events-btn").innerHTML = "Event Calendar";
   }
 });
 
@@ -41,19 +41,7 @@ document.getElementById("know-more-btn").addEventListener("click",  function(){
   }
 });
 
-//-------------- Event About Section --------------//
-//Know More Button Clicked
-document.getElementById("hidden-vectors-btn").addEventListener("click",  function(){
-  if (document.getElementById("hidden-vectors-btn").innerHTML == "View More") {
-    document.getElementById("hidden-vectors").classList.remove("w3-hide");
-    document.getElementById("hidden-vectors").scrollIntoView();
-    document.getElementById("hidden-vectors-btn").innerHTML = "Hide";
-  } else {
-    document.getElementById("hidden-vectors").classList.add("w3-hide");
-    document.getElementById("hidden-vectors-btn").scrollIntoView();
-    document.getElementById("hidden-vectors-btn").innerHTML = "View More";
-  }
-});
+
 
 //-------------- Event About Section --------------//
 //Know More Button Clicked

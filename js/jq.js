@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	get_events();
-	change_bg_vid_img('img/startpage/bg_video_loop.mp4', 'img/startpage/bg.jpg');
+	change_bg_vid_img('img/bg/bg_video.mp4', 'img/bg/bg.jpg');
 });
 
 // Event Listeners //
