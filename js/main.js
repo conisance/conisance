@@ -1,12 +1,5 @@
 //-------------- Header Section --------------//
 
-document.getElementById("event0").addEventListener("click",  function(){ 
-  document.getElementById("home-page").classList.add("w3-hide");
-  //document.getElementsByClass("event-info")[0].classList.add("w3-hide");
-  document.getElementById("event-info").classList.remove("w3-hide");
-  document.getElementById("event-info").scrollIntoView();
-});
-
 document.getElementById("know-more-btn").addEventListener("click",  function(){ 
   document.getElementById("home-page").classList.add("w3-hide");
   //document.getElementsByClass("event-info")[0].classList.add("w3-hide");
@@ -42,6 +35,19 @@ document.getElementById("know-more-btn").addEventListener("click",  function(){
 });
 
 
+//-------------- Event About Section --------------//
+//Know More Button Clicked
+document.getElementById("hidden-vectors-btn").addEventListener("click",  function(){
+  if (document.getElementById("hidden-vectors-btn").innerHTML == "View More") {
+    document.getElementById("hidden-vectors").classList.remove("w3-hide");
+    document.getElementById("hidden-vectors").scrollIntoView();
+    document.getElementById("hidden-vectors-btn").innerHTML = "Hide";
+  } else {
+    document.getElementById("hidden-vectors").classList.add("w3-hide");
+    document.getElementById("hidden-vectors-btn").scrollIntoView();
+    document.getElementById("hidden-vectors-btn").innerHTML = "View More";
+  }
+});
 
 //-------------- Event About Section --------------//
 //Know More Button Clicked

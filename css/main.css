@@ -29,6 +29,7 @@ h3 {
   background-color: rgb(15,77,146);
   background-size: cover;
   background-position: center;
+  background-image: url(../img/bg/bg_img.jpg);
   z-index: -2;
   min-height: 100vh;
   min-width: 100vw;
@@ -40,6 +41,10 @@ h3 {
 #bg-video {
   min-height: 100vh;
   min-width: 100vw;
+}
+
+#icon-nav {
+  cursor: pointer;
 }
 
 /* Sidebar */
@@ -56,7 +61,7 @@ h3 {
 
 /* Bar Items */
 #account-btn {margin-top:64px;}
-#policies-btn {margin-bottom: 64px;}
+#social-btn {margin-bottom: 64px;}
 
 /* Overlay Styling */
 #overlay {
@@ -137,23 +142,23 @@ h1 {
   min-width: 150px;
 }
 
-.text-dark-1 {color: #0f4d92;}
+.text-dark-1 {color: #000;}
 .text-dark-2 {color: #231651;}
-.text-light-1 {color: #d6fff6;}
+.text-light-1 {color: white;}
 .text-light-2 {color: #4dccbd;}
 .text-light-3 {color: #97ead2;}
 
 /* BG Colors Transparent */
 .bg-dark-1 {background-color: rgba(15, 77, 146, 0.9);}
 .bg-dark-2 {background-color: rgba(35,22,81,0.9);}
-.bg-light-1 {background-color: rgba(214,255,246,0.9);}
+.bg-light-1 {background-color: rgba(255,255,255,1);}
 .bg-light-2 {background-color: rgba(77,204,89,0.9);}
 .bg-light-3 {background-color: rgba(151,234,210,0.9);}
 
 /* BG Colors Solid*/
 .bg-dark-solid-1 {background-color: #0f4d92;}
 .bg-dark-solid-2 {background-color: #231651;}
-.bg-light-solid-1 {background-color: #d6fff6;}
+.bg-light-solid-1 {background-color: rgba(255,255,255,1);}
 .bg-light-solid-2 {background-color: #4dccbd;}
 .bg-light-solid-3 {background-color: #97ead2;}
 
@@ -172,10 +177,9 @@ h1 {
 
 .event-text {
   padding: 16px;
-  min-height: 30vh;
   cursor: pointer;
-  color: #0f4d92;
-  background-color: rgba(214,255,246,0.9);
+  color: #000;
+  background-color: white;
   border-radius: 0px 0px 16px 16px;
   margin-bottom: 32px;
 }
@@ -185,25 +189,17 @@ h1 {
   margin-bottom: 32px;
 }
 
-
-
-
-
-
-
-
-
 /* Colors */
-.dark-color-1 {color: #0f4d92;}
+.dark-color-1 {color: #000;}
 .dark-color-2 {color: #231651;}
-.light-color-1 {color: #d6fff6;}
+.light-color-1 {color: rgba(255,255,255,1);}
 .light-color-2 {color: #4dccbd;}
 .light-color-3 {color: #97ead2;}
 
 /* BG Colors */
-.bg-dark-color-1 {background-color: #0f4d92; color: #d6fff6;}
+.bg-dark-color-1 {background-color: #0f4d92; color: white;}
 .bg-dark-color-2 {background-color: #231651;}
-.bg-light-color-1 {background-color: #d6fff6; color: #0f4d92;}
+.bg-light-color-1 {background-color: rgba(255,255,255,1); color: #000;}
 .bg-light-color-2 {background-color: #4dccbd;}
 .bg-light-color-3 {background-color: #97ead2;}
 
@@ -216,8 +212,8 @@ h5 {
 }
 
 p {
-  font-size: 1.3rem;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .w3-button {
@@ -313,7 +309,7 @@ form {
 /* Single Event Page */
 /********************/
 #event-header {
-  background-color: rgba(214,255,246,0.1);
+  background-color: rgba(255,255,255,0.1);
 }
 
 #event-dat, #event-city {
@@ -321,10 +317,6 @@ form {
 }
 
 #event-about {
-  padding-top: 64px;
-  padding-bottom: 64px;
-  padding-left: 4px;
-  padding-right: 4px;
 }
 
 #event-about-para {

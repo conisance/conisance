@@ -1,32 +1,78 @@
 $(document).ready(function(){
 	get_events();
-	change_bg_vid_img('img/bg/bg_video.mp4', 'img/bg/bg.jpg');
+	//change_bg_vid_img('', 'img/bg/bg.jpg');
 });
 
+history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);show_home_page('header-section');
+    };
+
 // Event Listeners //
+$('#icon-nav').click(function(){show_home_page('header-section');});
 $('#open-bar-btn').click(function(){sidebar_action();}); //Opens Sidebar
 $('#overlay').click(function(){sidebar_action();}); //Closes Sidebar
 
-$('#account-btn').click(function(){console.log('account-btn');});
+$('#account-btn').click(function(){
+  sidebar_action();
+  document.getElementById("event-info").classList.add("w3-hide");
+  document.getElementById("contact-page").classList.remove("w3-hide");
+  document.getElementById("contact-page").scrollIntoView();
+});
+$('#home-btn').click(function(){sidebar_action();show_home_page('header-section');});
 $('#events-btn').click(function(){sidebar_action();show_home_page('events-section');});
 $('#about-btn').click(function(){sidebar_action();show_home_page("about-section");});
-$('#contact-btn').click(function(){sidebar_action();show_home_page("contact-section");});
+$('#contact-btn').click(function(){
+  sidebar_action();
+  document.getElementById("home-page").classList.add("w3-hide");
+  document.getElementById("event-info").classList.add("w3-hide");
+  document.getElementById("about-page").classList.add("w3-hide");
+  document.getElementById("contact-page").classList.remove("w3-hide");
+  document.getElementById("contact-page").scrollIntoView();
+});
 $('#policies-btn').click(function(){console.log('policies-btn');});
 
 $('#header-events-btn').click(function(){show_home_page('events-section');});
 
+$('.sponsorship-btn').click(function(){
+  document.getElementById("event-info").classList.add("w3-hide");
+  document.getElementById("contact-page").classList.remove("w3-hide");
+  document.getElementById("contact-page").scrollIntoView();
+});
+$('.brochure-btn').click(function(){
+  document.getElementById("event-info").classList.add("w3-hide");
+  document.getElementById("contact-page").classList.remove("w3-hide");
+  document.getElementById("contact-page").scrollIntoView();
+});
+$('.register-now-btn').click(function(){
+  document.getElementById("event-info").classList.add("w3-hide");
+  document.getElementById("contact-page").classList.remove("w3-hide");
+  document.getElementById("contact-page").scrollIntoView();
+});
 
-$('.sponsorship-btn').click(function(){show_section("contact-section");});
-$('.brochure-btn').click(function(){show_section("contact-section");});
-$('.register-now-btn').click(function(){show_section("contact-section");});
+$('#get-in-touch-btn').click(function(){
+  document.getElementById("event-info").classList.add("w3-hide");
+  document.getElementById("contact-page").classList.remove("w3-hide");
+  document.getElementById("contact-page").scrollIntoView();
+});
+$('#join-us-btn').click(function(){
+  document.getElementById("event-info").classList.add("w3-hide");
+  document.getElementById("about-page").classList.add("w3-hide");
+  document.getElementById("home-page").classList.add("w3-hide");
+  document.getElementById("contact-page").classList.remove("w3-hide");
+  document.getElementById("contact-page").scrollIntoView();
+});
 
-$('#get-in-touch-btn').click(function(){show_section("contact-section");});
-
-
+$('#event0').click(function(){
+  document.getElementById("home-page").classList.add("w3-hide");
+  document.getElementById("event-info").classList.remove("w3-hide");
+  change_bg_vid_img('', 'img/events/event0/event-bg.jpg');
+  document.getElementById("event-info").scrollIntoView();
+});
 
 // Functions //
 function change_bg_vid_img(video, img) {
-	$('#bg-video').html('<source src="'+video+'" type="video/mp4"></source>');
+	//$('#bg-video').html('<source src="'+video+'" type="video/mp4"></source>');
 	$('#bg').css('background-image', 'url('+img+')');
 }
 
@@ -48,15 +94,17 @@ $("more-events-btn").click(function(){
 function get_events() {
 	//from server
 	var event0 = ['img/events/event0/event0.jpg','Conisance Access Management and Open Banking Summit 2019','14th-15th November 2019','London, UK.','#CAMOB2019'];
-	$('#event0').html('<img class="event-img" src="'+event0[0]+'"><div class="event-text"><h5>'+event0[1]+'</h5><p>'+event0[2]+'<br>'+event0[3]+'<br>'+event0[4]+'</p></div>');
+	$('#event0').html('<div class="w3-hover-shadow w3-round-xxlarge"><img class="event-img" src="'+event0[0]+'"><div class="event-text"><h2>'+event0[1]+'</h2><p>'+event0[2]+'<br>'+event0[3]+'<br>'+event0[4]+'</p></div></div>');
 	
-	var more_events = 3; //take value by count
+	var more_events = 2; //take value by count
 	//below data will be from server
-	var event = [['img/events/event0/event0.jpg','Conisance Algorithmic Summit 2020','March 2020','California, USA.',''],['img/events/event0/event0.jpg','Conisance Health Analytics Summit 2020','July 2020','Berlin, Geramany',''],['img/events/event0/event0.jpg','Conisance Smart Buildings Summit 2020','October 2020','Singapore','']];
+	var event = [
+  ['img/events/event0/event1.jpg','Conisance Health Economics Summit','April 2020','London, UK',''],
+  ['img/events/event0/event2.jpg','World Prosthetics Summit',' October 2020','Chicago, USA','']];
 
 	for (i=1;i<=more_events;i++) {
-		$('#more-events').append('<div id="event'+i+'" class="w3-container w3-third w3-mobile w3-round-xxlarge w3-hover-grayscale"></div>');
-		$('#event'+i).html('<img class="event-img" src="img/events/event'+i+'/event'+i+'.jpg"><div class="event-text"><h5>'+event[i-1][1]+'</h5><p>'+event[i-1][2]+'<br>'+event[i-1][3]+'<br>'+event[i-1][4]+'</p></div>');
+		$('#more-events').append('<div id="event'+i+'" class="w3-container w3-half w3-mobile w3-round-xxlarge"></div>');
+		$('#event'+i).html('<div class="w3-hover-shadow w3-round-xxlarge"><img class="event-img" src="img/events/event'+i+'/event'+i+'.jpg"><div class="event-text"><h2>'+event[i-1][1]+'</h2><p>'+event[i-1][2]+'<br>'+event[i-1][3]+'<br>'+event[i-1][4]+'</p></div></div>');
 	}
 }
 
@@ -66,24 +114,28 @@ function sidebar_action() {
   if (sidebar.style.display == "block") {
     sidebar.style.display = "none";
     overlay.style.display = "none";
+    document.getElementById("home-btn").classList.add("w3-hide");
     document.getElementById("events-btn").classList.add("w3-hide");
     document.getElementById("about-btn").classList.add("w3-hide");
     document.getElementById("contact-btn").classList.add("w3-hide");
   } else {
     sidebar.style.display = "block";
     overlay.style.display = "block";
-    setTimeout(function(){document.getElementById("events-btn").classList.remove("w3-hide");}, 10);
-    setTimeout(function(){document.getElementById("about-btn").classList.remove("w3-hide");}, 110);
-    setTimeout(function(){document.getElementById("contact-btn").classList.remove("w3-hide");}, 210);
+    setTimeout(function(){document.getElementById("home-btn").classList.remove("w3-hide");}, 10);
+    setTimeout(function(){document.getElementById("events-btn").classList.remove("w3-hide");}, 110);
+    setTimeout(function(){document.getElementById("about-btn").classList.remove("w3-hide");}, 210);
+    setTimeout(function(){document.getElementById("contact-btn").classList.remove("w3-hide");}, 310);
   }
 }
 
 // Show Section in Homepage when Bar Item Clicked
 function show_home_page(view_section) {
   setTimeout(function(){
+    change_bg_vid_img('', 'img/bg/bg_img.jpg');
     document.getElementById("home-page").classList.remove("w3-hide");
     document.getElementById("event-info").classList.add("w3-hide");
     document.getElementById("about-page").classList.add("w3-hide");
+    document.getElementById("contact-page").classList.add("w3-hide");
     $('html, body').animate({scrollTop: $("#"+view_section).offset().top}, 300);
   }, 20);
 }
