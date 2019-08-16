@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        <meta http-equiv="Content-Security-Policy" content="
+                            default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+                            style-src 'self' 'unsafe-inline'; 
+                            media-src *; 
+                            img-src 'self' data: content:;">
+                        -->
+        <meta http-equiv="Content-Security-Policy" content="
+                            default-src * data: blob: ws: wss: gap://ready file://*;
+                            style-src * 'unsafe-inline'; 
+                            script-src * 'unsafe-inline' 'unsafe-eval';
+                            connect-src * ws: wss:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+
+        <title>Conisance</title>
+        <link rel="stylesheet" type="text/css" href="css/w3.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+
+    <body>
+        <div id="bg" class="w3-top"></div>
+        <div id="nav-sidebar">
+            <div id="sidebar-left" class="w3-sidebar w3-bar-block w3-top w3-animate-left">
+                <!-- <a id="account-btn" class="w3-button w3-bar-item w3-center w3-display-topmiddle w3-hover-blue">LOG IN</a>-->
+                <div class="w3-bar-item w3-display-middle w3-large">
+                    <a id="home-btn" href="index.html" class="w3-bar-item w3-hover-blue w3-button w3-round-xxlarge w3-center w3-hide w3-animate-left">HOME</a>
+                    <a id="about-btn" href="about.html" class="w3-bar-item w3-hover-blue w3-button w3-round-xxlarge w3-center w3-hide w3-animate-left">ABOUT US</a>
+                    <a id="contact-btn" href="contact.html" class="w3-bar-item w3-hover-blue w3-button w3-round-xxlarge w3-center w3-hide w3-animate-left">CONTACT</a>
+                </div>
+                <div id="social-btn" class="w3-bar-item w3-center w3-display-bottommiddle">
+                    <div id="social-btn" class="w3-cell-row">
+                        <a class=" w3-cell w3-padding w3-hover-blue w3-round-xxlarge"><i class="fab fa-facebook-f w3-large"></i></a>
+                        <a class=" w3-cell w3-padding w3-hover-blue w3-round-xxlarge"><i class="fab fa-twitter w3-large"></i></a>
+                        <a class=" w3-cell w3-padding w3-hover-blue w3-round-xxlarge"><i class="fab fa-linkedin-in w3-large"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Bar for Humburger and Contact us Button -->
+            <div id="navbar-top" class="w3-top w3-animate-opacity">
+                <button id="open-bar-btn" class="w3-button w3-hover-white w3-xlarge w3-left w3-transparent w3-text-white">&#9776;</button>
+                <a href="index.html"><img id="icon-nav" src="img/icon.png" alt="" class="w3-image w3-left"></a>
+                <a  href="contact.html"><button id="contact-us-btn" class="w3-button w3-text-white w3-large w3-right w3-border w3-round-xxlarge w3-transparent w3-hover-white">Contact Us</button></a>
+            </div>
+
+            <!-- Sidebars Overlay -->
+            <div id="overlay" class="w3-overlay w3-animate-opacity">
+                <div id="close-bar" class="w3-animate-opacity w3-center w3-display-middle">
+                    <div id="close-sign" class="w3-animation-pulse">&times;</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="about-page" class="width-lock w3-text-white content-padding w3-animate-opacity">
+            <div id="about-page-content" class="w3-center text-light-1" style="padding-top: 2vh;">
+                <h1>About Us</h1>
+
+                <div class="w3-container about-cards">
+                    <div class="w3-cell-row w3-white w3-round-xxlarge w3-padding w3-margin-bottom">
+                        <p>In a world of million possibilities we live in today the challenge we confront is not about finding the right path of human evolution. The paths are already being discovered as everyday technology is bringing in promises of a tomorrow with greater possibilities. In the wake of Industrial Revolution 4.O, rather than discovering, it is more about choosing the right path.</p>
+                        <p>With the Rise of technologies like Machine Learning, Artificial Intelligence, Genetic Engineering, Big Data, Blockchain, etc. We have a great opportunity to manoeuvre our efforts in direction of decisions entailing a higher Social Value, which have the potential to solve not merely the convenience challenges, but rather the ever lingering challenges of human establishment like Inequality, Injustice, Poverty, Health and Happiness indeed.</p>
+                        <p>With the dawn of quantum age, it will be imperative to ensure the perfect harmony between evolution in technology and human wisdom and this is where we establish ourselves as mediators of a better world.</p>
+                        <p>For any enquiries contact <a href="mailto:karen@conisance.com">karen@conisance.com</a></p>
+                    </div>
+                </div>
+                <div class="w3-container w3-third w3-margin-bottom">
+                    <div class="w3-white w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                        <div class="w3-cell w3-cell-middle">
+                            <h2 class="w3-xlarge">Who We Are</h2>
+                            <p>We are Conisance, a global events company connecting innovation and reality. For a sustainable future of our planet, with trust, we catalyse collaborations amongst public, private and international organizations on our networking platforms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-container w3-third w3-margin-bottom">
+                    <div class="w3-white w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                        <div class="w3-cell w3-cell-middle">
+                            <h2 class="w3-xlarge">What We Do</h2>
+                            <p>We strategically connect Corporates, Government Representatives, Startups, Investors and Academics with our comprehensive event agendas, focused on the critical challenges of the 21st century faced by various industries, inducing subject matter expertise and thriving business & economic goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-container w3-third w3-margin-bottom">
+                    <div class="w3-white w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 450px;">
+                        <div class="w3-cell w3-cell-middle">
+                            <h2 class="w3-xlarge">Our Mission</h2>
+                            <p>We are aligned with the United Nations Sustainable Development Goals and thus our events are structured with the most elite line-up of Speakers, Sponsors and Delegates, to leverage emerging technologies in defining inclusive and equitable solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <h1>Our Values</h1>
+                <div class="w3-cell-row w3-margin-bottom">
+                    <div class="w3-container w3-third w3-margin-bottom">
+                        <div class="w3-white w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 320px;">
+                            <div class="w3-cell w3-cell-middle">
+                                <h2 class="w3-xlarge">Passion</h2>
+                                <p>We're hopelessly convinced that our unrivalled projects will change the world. Every vertical of Conisance operates with a drive to transform our ideas into a remarkable event experience. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-container w3-third w3-margin-bottom">
+                        <div class="w3-white w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 320px;">
+                            <div class="w3-cell w3-cell-middle">
+                                <h2 class="w3-xlarge">Pragmatism</h2>
+                                <p>We are research driven and agile. We tackle our problems with high energy, in a sensible and logical manner, balancing our long and short term goals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-container w3-third w3-margin-bottom">
+                        <div class="w3-white w3-round-xxlarge w3-padding w3-cell-row" style="min-height: 320px;">
+                            <div class="w3-cell w3-cell-middle">
+                                <h2 class="w3-xlarge">Integrity</h2>
+                                <p>We strongly value honesty and transparency. We conduct every business operation on a fair and ethical two-way basis which is in the best interest of our clients and team members.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="w3-center w3-row" style="color: rgb(255,255,255); width: 100vw;">
+            <div style="width: 100vw; background-color: rgba(60,60,60,0.8);">
+                <div id="subscription-form" class="w3-padding-large width-lock">
+                    <form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/devconisance@gmail.com" method="post" class="w3-round-xxlarge">
+                        <div class="w3-cell-row">
+                            <div class="w3-cell">
+                                <fieldset id="fs-frm-inputs" style="border: none;">
+                                    <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border" type="email" name="_replyto" id="email-address" placeholder="Email" required>
+                                    <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border" type="hidden" name="_subject" id="email-subject" value="Subscription Form Submission">
+                                </fieldset>
+                            </div>
+                            <div class="w3-cell w3-cell-middle w3-left-align" style="width: 150px;">
+                                <input class="w3-button btn-size w3-large w3-border w3-round-xxlarge w3-hover-white" type="submit" value="Subscribe">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="w3-row" style="background-color: rgba(40,40,40,0.8);">
+                <div class="width-lock">
+                    <div class="w3-quarter">
+                        <a href="tnc.html"><button class="w3-mobile w3-button w3-hover-white" onclick="document.getElementById('tnc').style.display='block'" >Terms and Conditions</button></a>
+                    </div>
+                    <div class="w3-quarter">
+                        <a href="privacy-policies.html"><button class="w3-mobile w3-button w3-hover-white" onclick="document.getElementById('policies').style.display='block'" >Privacy Policies</button></a>
+                    </div>
+                    <div class="w3-quarter">
+                        <button class="w3-mobile w3-button w3-hover-white">FAQs</button>
+                    </div>
+                    <div class="w3-quarter">
+                        <button class="w3-mobile w3-button w3-hover-white">Industry News</button>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-row" style="background-color: rgba(20,20,20,0.8); width: 100vw;">
+                <div class="width-lock">
+                    <p class="w3-small">&copy; Conisance LLP. All rights reserved. Developed at Beyondt.</p>
+                </div> 
+            </div>
+        </div>
+
+
+
+        
+        <script src="js/fa.js"></script>
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>

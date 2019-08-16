@@ -1,21 +1,4 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap');
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -24,9 +7,8 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    background-color:#0f4c92;
+    font-family: 'Lato', sans-serif;
     font-size:12px;
     height:100vh;
     margin:0px;
@@ -34,6 +16,31 @@ body {
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     /* text-transform:uppercase; */
     width:100%;
+}
+
+p, h1, h2, h3, h4, h5, h6, a, button, label {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-size:300%;
+    margin-top: 64px;
+    font-weight:normal;
+    overflow:visible;
+}
+
+h2 {
+  font-size: 200%;
+  font-weight: 400;
+}
+
+h5 {
+  font-weight: 400;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
 }
 
 /* Portrait layout (default) */
@@ -58,14 +65,6 @@ body {
         margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
     }
-}
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
 }
 
 .event {
@@ -103,3 +102,162 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.width-lock {
+  max-width: 960px;
+  margin: auto;
+}
+
+.w3-button {
+  width: 150px;
+}
+
+.fab {
+  width: 100%;
+}
+
+/* Backround Image and Video*/
+#bg {
+  background-color: rgb(15,77,146);
+  background-size: cover;
+  background-position: left;
+  background-image: url('../img/bg/bg_img.jpg');
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  z-index: -2;
+  opacity: 1;
+  -webkit-filter: brightness(56%);
+  filter: brightness(56%);
+}
+
+/* START Navbar and Sidebar */
+
+#sidebar-left {
+  display: none;
+  z-index:5; 
+  width: 200px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+/* Overlay Styling */
+#overlay {
+  cursor: pointer;
+  padding-top: env(safe-area-inset-top); 
+  padding-right: env(safe-area-inset-right); 
+  padding-left: env(safe-area-inset-left);
+}
+
+#open-bar-btn, #contact-us-btn, #close-sign {
+  z-index: 2;
+  color: white;
+}
+
+#contact-us-btn {
+  margin: 8px;
+}
+
+#account-btn, #social-btn {
+    padding-top: 48px; 
+    padding-bottom: 48px;
+    cursor: pointer;
+}
+
+#social-btn {
+  max-width: 300px; 
+  margin: auto;
+}
+
+/* Cross Button Placement */
+#close-bar {
+  font-size: 20vw; 
+  line-height: 50%; 
+  padding-left: 200px;
+}
+
+/* Cross Button Animation */
+.w3-animation-pulse {
+  -webkit-animation-name: fading-out;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  
+  animation-name: fading-out;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes fading-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+@keyframes fading-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+#navbar-top {
+    height: 60px;
+    background-color: rgba(20,20,20,0.8);
+}
+#open-bar-btn {
+    height: 60px;
+    width: 60px;
+}
+
+#icon-nav {
+    max-height: 60px; 
+    padding: 16px;
+}
+
+
+
+
+header {
+  min-height: 900px;
+}
+#header-content {
+  padding-top: 12vh;
+}
+
+#header-logo {
+  margin: auto;
+  max-width: 400px;
+  padding-top: 24px;
+}
+
+#event-name {
+  font-weight: 900 !important;
+  color: yellow;
+  padding-bottom: 0px;
+  font-size: 300% !important;
+}
+
+
+#brochure-btn {
+  width: 200px;
+}
+
+
+.vectors-img {
+  min-width: 100px; 
+  min-height: 100px; 
+  background-position: center; 
+  background-size: contain; 
+  background-color: white; 
+  background-repeat:no-repeat;
+}
+
+#launchpad-img {
+  min-width: 100px; 
+  height: 600px; 
+  background-position: center; 
+  background-size: cover; 
+  background-color: white; 
+  background-repeat:no-repeat; 
+  background-image: url('../img/events/event0/Conisance-Launchpad.jpg'); 
+}
+
