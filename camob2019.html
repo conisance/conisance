@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        <meta http-equiv="Content-Security-Policy" content="
+                            default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+                            style-src 'self' 'unsafe-inline'; 
+                            media-src *; 
+                            img-src 'self' data: content:;">
+                        -->
+        <meta http-equiv="Content-Security-Policy" content="
+                            default-src * data: blob: ws: wss: gap://ready file://*;
+                            style-src * 'unsafe-inline'; 
+                            script-src * 'unsafe-inline' 'unsafe-eval';
+                            connect-src * ws: wss:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+
+        <title>Conisance</title>
+        <link rel="stylesheet" type="text/css" href="css/w3.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+
+    <body>
+        <div id="bg" class="w3-top"></div>
+        <div id="nav-sidebar">
+            <div id="sidebar-left" class="w3-sidebar w3-bar-block w3-top w3-animate-left">
+                <!-- <a id="account-btn" class="w3-button w3-bar-item w3-center w3-display-topmiddle w3-hover-blue">LOG IN</a>-->
+                <div class="w3-bar-item w3-display-middle w3-large">
+                    <a id="home-btn" href="index.html" class="w3-bar-item w3-hover-blue w3-button w3-round-xxlarge w3-center w3-hide w3-animate-left">HOME</a>
+                    <a id="about-btn" href="about.html" class="w3-bar-item w3-hover-blue w3-button w3-round-xxlarge w3-center w3-hide w3-animate-left">ABOUT US</a>
+                    <a id="contact-btn" href="contact.html" class="w3-bar-item w3-hover-blue w3-button w3-round-xxlarge w3-center w3-hide w3-animate-left">CONTACT US</a>
+                </div>
+                <div id="social-btn" class="w3-bar-item w3-center w3-display-bottommiddle">
+                    <div id="social-btn" class="w3-cell-row">
+                        <a class=" w3-cell w3-padding w3-hover-blue w3-round-xxlarge"><i class="fab fa-facebook-f w3-large"></i></a>
+                        <a class=" w3-cell w3-padding w3-hover-blue w3-round-xxlarge"><i class="fab fa-twitter w3-large"></i></a>
+                        <a class=" w3-cell w3-padding w3-hover-blue w3-round-xxlarge"><i class="fab fa-linkedin-in w3-large"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Bar for Humburger and Contact us Button -->
+            <div id="navbar-top" class="w3-top w3-animate-opacity">
+                <button id="open-bar-btn" class="w3-button w3-hover-white w3-xlarge w3-left w3-transparent w3-text-white">&#9776;</button>
+                <a href="index.html"><img id="icon-nav" src="img/icon.png" alt="" class="w3-image w3-left"></a>
+                <a  href="contact.html"><button id="contact-us-btn" class="w3-button w3-text-white w3-large w3-right w3-border w3-round-xxlarge w3-transparent w3-hover-white">Contact Us</button></a>
+            </div>
+
+            <!-- Sidebars Overlay -->
+            <div id="overlay" class="w3-overlay w3-animate-opacity">
+                <div id="close-bar" class="w3-animate-opacity w3-center w3-display-middle">
+                    <div id="close-sign" class="w3-animation-pulse">&times;</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="home-page" class="w3-animate-opacity">
+            <header class="w3-display-container">
+                <div id="header-content" class="w3-display-topmiddle w3-center w3-text-white width-lock">
+                    <div id="header-quote">
+                        <p>
+                            Innovate. Collaborate. Nurture.<br> We are Conisance, a global events company working towards a more sustainable future by fostering the best collaboration practices.
+                        </p>
+                    </div>
+                    <div id="header-logo" class="w3-center">
+                        <img src="img/logo.png" class="w3-image"/>
+                    </div>
+                    <div id="event-name" class="w3-center w3-xxlarge">ACCESS MANAGEMENT & OPEN BANKING SUMMIT 2019</div>
+                    <div id="event-date" class="w3-center"><p>14th - 15th November 2019</p></div>
+                    <div id="event-place" class="w3-center"><p>London, UK.</p></div>
+                    <div class="w3-cell-row w3-center">
+                        <div class="w3-cell w3-mobile">
+                            <a href="booking.html"><button class="register-now-btn w3-button w3-large w3-border w3-round-xxlarge w3-hover-white">Book Tickets</button></a>
+                        </div>
+                    </div>
+                    <div class="w3-center">
+                        <div id="social-btn" class="w3-cell-row">
+                            <a class=" w3-cell w3-padding"><i class="fab fa-facebook-f w3-block w3-large w3-button w3-hover-blue w3-round-xxlarge"></i></a>
+                            <a class=" w3-cell w3-padding"><i class="fab fa-twitter w3-block w3-large w3-button w3-hover-blue w3-round-xxlarge"></i></a>
+                            <a class=" w3-cell w3-padding"><i class="fab fa-linkedin-in w3-block w3-large w3-button w3-hover-blue w3-round-xxlarge"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div id="event-about" class="w3-container w3-white">
+                <div class="w3-center">
+                    <h1>About the Event</h1>
+                </div>
+                <div class="w3-center width-lock">
+                    <div id="event-about-text" class="w3-center">
+                        <p>
+                            Conisance Access Management and Open Banking Summit is a path-breaking networking forum that will bring together key decision-makers from the world’s leading Organizations, Start-Ups, and Governments.
+                        </p>
+                        <p>
+                            With thought-provoking Case Studies, Keynotes and Panel Discussions, this summit will address the forthcoming challenges and set new benchmarks on the best practices in Digital Identity, Digital Onboarding, and Open Banking. 
+                        </p>
+                    </div>
+                    <div class="w3-cell-row w3-mobile">
+                        <div id="event-about-1" class="w3-cell w3-mobile w3-padding-small w3-margin-top w3-center w3-cell-middle" style="width: 33%">
+                            <div class="w3-white w3-card w3-padding w3-round-xxlarge w3-center">
+                                <img id="event-about-img-1" class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/about-sec/Banking-the-unbanked.png">
+                                <h2>Race to Bank the Unbanked</h2>
+                                <p id="event-about-para-1" class="w3-hide w3-animate-opacity">Discovering the true potential of the robust Digital Identification Systems will help many gain access to their rights and services. Explore the role of Banks and Financial Institutions in setting a global benchmark for Digital Identity by leveraging emerging technologies, as the inclusion frontier presents a massive $380 Billion opportunity for Global Business and Economic Development</p>
+                                <button id="event-about-para-1-btn" class="w3-button w3-large w3-padding w3-round-xxlarge w3-margin-bottom w3-indigo w3-hover-blue">Show More</button>
+                            </div>
+                        </div>
+                        <div id="event-about-2" class="w3-cell w3-mobile w3-padding-small w3-margin-top w3-center w3-cell-middle" style="width: 33%">
+                            <div class="w3-white w3-card w3-padding w3-round-xxlarge w3-center">
+                                <img id="event-about-img-2" class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/about-sec/Always-be-onboarding.png">
+                                <h2>'Always be Onboarding' Mantra</h2>
+                                <p id="event-about-para-2" class="w3-hide w3-animate-opacity">The overwhelming effect of ‘GAFA’ has changed the entire customer landscape. Embracing the rapid developments in technology like AI, Big Data, Biometrics, Blockchain, etc. has not only helped financial institutions transform their legacy, but also raised the standard of customer experience, forever.Get your hands on the optimal onboarding strategies that will play a critical role in meeting your business goals.</p>
+                                <button id="event-about-para-2-btn" class="w3-button w3-large w3-padding w3-round-xxlarge w3-margin-bottom w3-indigo w3-hover-blue">Show More</button>
+                            </div>
+                        </div>
+                        <div id="event-about-3" class="w3-cell w3-mobile w3-padding-small w3-margin-top w3-center w3-cell-middle" style="width: 33%">
+                            <div class="w3-white w3-card w3-padding w3-round-xxlarge w3-center">
+                                <img id="event-about-img-3" class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/about-sec/Open-Xperience.png">
+                                <h2>The Open <br>'X'perience</h2>
+                                <p id="event-about-para-3" class="w3-hide w3-animate-opacity">Open Banking, as we know it, may become outdated before it even takes off as there is an opportunity to leap into an integrated marketplace called Open X. Hence, the focus will shift from Products to Customer Experience, Assets to Data, Shared Access instead of Ownership along with Collaborations. Come, experience the evolution around concepts like Lifestyle Banking, Hyper-Personalization, Opti Channel experience and more!</p>
+                                <button id="event-about-para-3-btn" class="w3-button w3-large w3-padding w3-round-xxlarge w3-margin-bottom w3-indigo w3-hover-blue">Show More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-cell-row w3-mobile w3-center w3-padding-32">
+                        <a  href="contact.html"><button id="brochure-btn" class="w3-button w3-large w3-round-xxlarge w3-indigo w3-hover-blue">Brochure</button></a>
+                    </div>
+                </div>
+            </div>
+            <div id="topics-covered" class="w3-container w3-text-white">
+                <div class="w3-center width-lock">
+                    <h1>Topics We Cover</h1>
+                </div>
+                <div id="shown-vectors" class="w3-container width-lock w3-mobile w3-margin-top w3-padding w3-center">
+                    <div class="w3-quarter">
+                        <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/1.png">
+                        <p>Agile Methodologies</p>
+                    </div>
+                    <div class="w3-quarter">
+                        <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/2.png">
+                        <p>Banking 4.0</p>
+                    </div>
+                    <div class="w3-quarter">
+                        <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/3.png">
+                        <p>Behavioural Analytics</p>
+                    </div>
+                    <div id="last-shown-vector" class="w3-quarter">
+                        <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/4.png">
+                        <p>Borderless Transactions</p>
+                    </div>
+                    <div id="hidden-vectors" class="w3-hide">
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/5.png">
+                            <p>Cross Selling</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/6.png">
+                            <p>Design Thinking</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/7.png">
+                            <p>Digital-Identity</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/8.png">
+                            <p>Empathy by Design</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/15.png">
+                            <p>Paperless Transactions</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/16.png">
+                            <p>Real Time Analytics</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/17.png">
+                            <p>Universal Digital Identity</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/18.png">
+                            <p>Wearable Banking</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/10.png">
+                            <p>Human Centred Approach</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/12.png">
+                            <p>Intelligent Customer Experience</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/13.png">
+                            <p>Omnichannel Banking</p>
+                        </div>
+                        <div class="w3-quarter">
+                            <img class="w3-image w3-round-xxlarge w3-padding" src="img/events/event0/topics/14.png">
+                            <p>Open Banking</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-cell-row w3-center w3-padding-32">
+                    <button id="hidden-vectors-btn" class="w3-button w3-large w3-padding w3-border w3-text-white w3-round-xxlarge w3-hover-white">View More</button>
+                </div>
+            </div>
+            <div id="speakers" class="w3-container w3-white w3-center">
+                <h1>Expected Speakers</h1>
+                <div class="width-lock">
+                    <div id="show-speakers" class="w3-container w3-mobile">
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/1.png'); ">
+                                </div>
+                                <p>NatWest</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/2.png'); ">
+                                </div>
+                                <p>Atom Bank</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/3.png'); ">
+                                </div>
+                                <p>Citi Bank</p>
+                            </div>
+                        </div>
+                        <div id="last-shown-speaker" class="w3-quarter">
+                            <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/4.png'); ">
+                                </div>
+                                <p>Monzo</p>
+                            </div>
+                        </div>
+                        <div id="hidden-speakers" class="w3-hide">
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/5.png'); ">
+                                    </div>
+                                    <p>MasterCard</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/6.png'); ">
+                                    </div>
+                                    <p>RBS</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/7.png'); ">
+                                    </div>
+                                    <p>Starling bank</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/8.png'); ">
+                                    </div>
+                                    <p>Barclays</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/9.png'); ">
+                                    </div>
+                                    <p>Credit Suisse</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/10.png'); ">
+                                    </div>
+                                    <p>Goldman Sachs</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/11.png'); ">
+                                    </div>
+                                    <p>HSBC</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/12.png'); ">
+                                    </div>
+                                    <p>Deutsche Bank</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/13.png'); ">
+                                    </div>
+                                    <p>DBS</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/14.png'); ">
+                                    </div>
+                                    <p>Open Banking</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/15.png'); ">
+                                    </div>
+                                    <p>Santander</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/speakers/16.png'); ">
+                                    </div>
+                                    <p>UBS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-cell-row w3-center w3-padding-32">
+                        <button id="hidden-speakers-btn" class="w3-button w3-large w3-padding w3-indigo w3-hover-blue w3-round-xxlarge">View All</button>
+                    </div>
+                </div>
+            </div>
+            <div id="attendees" class="w3-container width-lock w3-text-white">
+                <div class="w3-center">
+                    <h1>Attendee Breakdown</h1>
+                </div>
+                <div class="w3-container">
+                    <img id="event-about-infographics" style="max-width: 50%" class="w3-half w3-hide-small w3-hide-medium w3-padding w3-image" src="img/events/event0/graph1.png">
+                    <img id="event-about-infographics" class="w3-half w3-hide-large w3-padding w3-image" src="img/events/event0/graph1.png">
+                    <div id="event-about-text" class="w3-half w3-padding w3-border text-light-1 w3-card w3-round-xxlarge">
+                        <h2 class="w3-padding w3-xlarge">Departments</h2>
+                        <p class="w3-padding">
+                            &#8226; Digital Transformation<br>
+                            &#8226; Risk Management<br>
+                            &#8226; Mobile Banking<br>
+                            &#8226; Strategy & Operations<br>
+                            &#8226; Retail Banking<br>
+                            &#8226; R&D<br>
+                            &#8226; Product Development<br>
+                            &#8226; Customer Experience<br>
+                            &#8226; IT<br>
+                            &#8226; Data Analytics<br>
+                            &#8226; Digital Onboarding<br>
+                            &#8226; AML/KYC<br>
+                            &#8226; Digital Identity & Fraud Prevention<br>
+                            &#8226; Identity and Access Management<br>
+                            &#8226; Client Solutions<br>
+                            &#8226; Global Partnerships <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="w3-padding-32"></div>
+            </div>
+            <div id="conisance-community" class="w3-container w3-text-white">
+                <div class="w3-center">
+                    <h1>Conisance Community</h1>
+                </div>
+                <div class="w3-center width-lock">
+                    <div class="w3-cell-row w3-mobile">
+                        <div class="w3-cell w3-mobile w3-padding-small w3-margin-top w3-center w3-cell-middle" style="width: 33%;">
+                            <div class="w3-white w3-card w3-padding w3-round-xxlarge w3-center">
+                                <img id="event-about-img-1" class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/con-community-sec/Unrivalled-Networking.png">
+                                <h2>Unrivaled Networking</h2>
+                                <p id="event-about-para-1" class="w3-animate-opacity">Set one-on-one meetings, brainstorm, and network with relevant industry leaders, prominent speakers, innovative Start-Ups, and media partners.</p>
+                            </div>
+                        </div>
+                        <div class="w3-cell w3-mobile w3-padding-small w3-margin-top w3-center w3-cell-middle" style="width: 33%;">
+                            <div class="w3-white w3-card w3-padding w3-round-xxlarge w3-center">
+                                <img id="event-about-img-2" class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/con-community-sec/Critical-Insights.png">
+                                <h2>Critical Insights</h2>
+                                <p id="event-about-para-2" class="w3-animate-opacity">Enhance your business intelligence with access to insightful Case Studies and Discussions based on our thoroughly researched and comprehensive agendas.</p>
+                            </div>
+                        </div>
+                        <div class="w3-cell w3-mobile w3-padding-small w3-margin-top w3-center w3-cell-middle" style="width: 33%;">
+                            <div class="w3-white w3-card w3-padding w3-round-xxlarge w3-center">
+                                <img id="event-about-img-3" class="w3-image w3-padding w3-margin-top" width="50%" src="img/events/event0/con-community-sec/Long-Term-Collaborations.png">
+                                <h2>Long Term Collaborations</h2>
+                                <p id="event-about-para-3" class="w3-animate-opacity">Achieve your long term collaboration goals by efficiently engaging with the right people prior, during and post the event using our Conisance App.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-padding-32"></div>
+                </div>
+            </div>
+            <div class="w3-container w3-white w3-center">
+                <div class="width-lock">
+                    <h1>Conisance Launchpad</h1>
+                    <div id="launchpad-img" class="w3-half w3-card w3-margin-bottom w3-padding w3-center w3-round-xxlarge"></div>
+                    <div id="launchpad-content" class="w3-padding w3-half">
+                        <div class=" w3-cell-row">
+                            <div class="w3-cell w3-cell-middle w3-card w3-white w3-padding w3-round-xxlarge w3-margin-bottom" style="height: 600px;">
+                                <h2 class="w3-xlarge">Accelerate Your Startup.</h2>
+                                <p>From the right platform to the right people, Conisance Launchpad aims to provide booming start-ups the right environment to thrive in.</p>
+                                <p>We empower the start-up community with opportunities like Product Showcase, Building Campaigns, Speaker’s Slot and more, so that they form lasting relationships with industry peers, build brand recognition, and achieve tangible results.</p>
+                                <p>Designed to transcend beyond a single event, our digital community brings start-up founders closer to industry heavyweights, VCs, mentors, key decision-makers around the globe.</p>
+                                <a  href="contact.html"><button id="get-in-touch-btn" class="w3-button w3-large w3-padding w3-round-xxlarge w3-hover-blue w3-indigo">Get in Touch</button></a>
+                            </div>
+                        </div>
+                        <div class="w3-padding-32"></div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="sponsors" class="w3-container w3-text-white w3-center">
+                <h1>Sponsors</h1>
+                <div class="width-lock">
+                    <div id="show-sponsors" class="w3-container w3-mobile">
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/sponsors/1.png'); ">
+                                </div>
+                                <p>Sponsors</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/sponsors/2.png'); ">
+                                </div>
+                                <p>Sponsors</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/sponsors/3.png'); ">
+                                </div>
+                                <p>Sponsors</p>
+                            </div>
+                        </div>
+                        <div id="last-shown-sponsor" class="w3-quarter">
+                            <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/sponsors/4.png'); ">
+                                </div>
+                                <p>Sponsors</p>
+                            </div>
+                        </div>
+                        <div id="hidden-sponsors" class="w3-hide">
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/sponsors/5.png'); ">
+                                    </div>
+                                    <p>Sponsors</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/sponsors/6.png'); ">
+                                    </div>
+                                    <p>Sponsors</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/sponsors/7.png'); ">
+                                    </div>
+                                    <p>Sponsors</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/sponsors/8.png'); ">
+                                    </div>
+                                    <p>Sponsors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-cell-row w3-center w3-padding-32">
+                        <button id="hidden-sponsors-btn" class="w3-button w3-large w3-padding w3-border w3-text-white w3-round-xxlarge w3-hover-white">View All</button>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div id="media-partners" class="w3-container w3-text-white w3-center">
+                <h1>Media Partners</h1>
+                <div class="width-lock">
+                    <div id="show-media-partners" class="w3-container w3-mobile">
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/media/1.png'); ">
+                                </div>
+                                <p>Chaineum</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/media/2.png'); ">
+                                </div>
+                                <p>Fintech Finance</p>
+                            </div>
+                        </div>
+                        <div class="w3-quarter">
+                            <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/media/3.png'); ">
+                                </div>
+                                <p>Fintech Futures</p>
+                            </div>
+                        </div>
+                        <div id="last-shown-media-partner" class="w3-quarter">
+                            <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/media/4.png'); ">
+                                </div>
+                                <p>Fintech Weekly</p>
+                            </div>
+                        </div>
+                        <div id="hidden-media-partners" class="w3-hide">
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/media/5.png'); ">
+                                    </div>
+                                    <p>Media Partners</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/media/6.png'); ">
+                                    </div>
+                                    <p>Media Partners</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/media/7.png'); ">
+                                    </div>
+                                    <p>Media Partners</p>
+                                </div>
+                            </div>
+                            <div class="w3-quarter">
+                                <div class=" w3-card w3-white w3-margin w3-padding w3-round-xxlarge">
+                                    <div class="vectors-img w3-round-xxlarge" style="background-image: url('img/events/event0/media/8.png'); ">
+                                    </div>
+                                    <p>Media Partners</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-cell-row w3-center w3-padding-32">
+                        <button id="hidden-media-partners-btn" class="w3-button w3-large w3-padding w3-border w3-text-white w3-round-xxlarge w3-hover-white">View All</button>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-container w3-center width-lock w3-text-white">
+                <h1 class="w3-margin-bottom">Venue</h1>
+                <div class="w3-half w3-padding w3-center">
+                    <img class="w3-image w3-round-xxlarge" src="img/events/event0/venue.jpg" style="max-height: 300px;">
+                </div>
+                <div id="launchpad-content" class="w3-padding w3-half">
+                    <div class=" w3-cell-row">
+                        <div class="w3-cell w3-cell-middle w3-card w3-white w3-padding w3-round-xxlarge w3-margin-bottom" style="height: 300px;">
+                            <h2 class="w3-large">Conisance Access Management and Open Banking Summit 2019</h2>
+                            <p>14th - 15th November 2019</p>
+                            <p>Park Inn by Radisson Group Heathrow London, Bath Rd, Heathrow, Sipson, West Drayton UB7 0DU, UK</p>
+                        </div>
+                    </div>
+                    <div class="w3-padding-32"></div>
+                </div>
+            </div>
+            <div class="w3-center w3-row" style="color: rgb(255,255,255); width: 100vw;">
+                <div style="width: 100vw; background-color: rgba(60,60,60,0.8);">
+                    <div id="subscription-form" class="w3-padding-large width-lock">
+                        <form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/devconisance@gmail.com" method="post" class="w3-round-xxlarge">
+                            <div class="w3-cell-row">
+                                <div class="w3-cell">
+                                    <fieldset id="fs-frm-inputs" style="border: none;">
+                                        <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border" type="email" name="_replyto" id="email-address" placeholder="Email" required>
+                                        <input class="w3-input bg-light-1 text-dark-1 w3-round w3-large w3-border" type="hidden" name="_subject" id="email-subject" value="Subscription Form Submission">
+                                    </fieldset>
+                                </div>
+                                <div class="w3-cell w3-cell-middle w3-left-align" style="width: 150px;">
+                                    <input class="w3-button btn-size w3-large w3-border w3-round-xxlarge w3-hover-white" type="submit" value="Subscribe">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="w3-row" style="background-color: rgba(40,40,40,0.8);">
+                    <div class="width-lock">
+                        <div class="w3-quarter">
+                            <a href="tnc.html"><button class="w3-mobile w3-button w3-hover-white">Terms and Conditions</button></a>
+                        </div>
+                        <div class="w3-quarter">
+                            <a href="privacy-policies.html"><button class="w3-mobile w3-button w3-hover-white">Privacy Policies</button></a>
+                        </div>
+                        <div class="w3-quarter">
+                            <a href="faqs.html"><button class="w3-mobile w3-button w3-hover-white">FAQs</button></a>
+                        </div>
+                        <div class="w3-quarter">
+                            <button class="w3-mobile w3-button w3-hover-white">Industry News</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-row" style="background-color: rgba(20,20,20,0.8); width: 100vw;">
+                    <div class="width-lock">
+                        <p class="w3-small">&copy; Conisance Global Limited. All rights reserved. Developed at Beyondt.</p>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <script src="js/fa.js"></script>
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>
